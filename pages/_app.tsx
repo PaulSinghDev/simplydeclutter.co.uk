@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Fonts />
       <Colors />
       <Global />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 }
