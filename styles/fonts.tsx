@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle`
+export const Fonts = createGlobalStyle`
     @font-face {
         font-family: Montserrat;
         src: url('/assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype'),
