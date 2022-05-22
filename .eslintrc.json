@@ -8,7 +8,7 @@
     "prettier",
     "next/core-web-vitals"
   ],
-  "plugins": ["testing-library", "react"],
+  "plugins": ["testing-library", "react", "jest"],
   "overrides": [
     // Only uses Testing Library lint rules in test files
     {
