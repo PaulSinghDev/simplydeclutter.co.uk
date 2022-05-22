@@ -1,5 +1,3 @@
-const Card: React.FC = () => {
-  return <div></div>;
-};
+const Card: React.FC = () => <div />;
 
 export { Card };

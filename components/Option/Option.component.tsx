@@ -1,5 +1,3 @@
-const Option: React.FC = () => {
-  return <option></option>;
-};
+const Option: React.FC = () => <option />;
 
 export { Option };

@@ -1,5 +1,3 @@
-const Button: React.FC = () => {
-  return <button></button>;
-};
+const Button: React.FC = () => <button />;
 
 export { Button };

@@ -1,5 +1,3 @@
-const Form: React.FC = () => {
-  return <form></form>;
-};
+const Form: React.FC = () => <form />;
 
 export { Form };

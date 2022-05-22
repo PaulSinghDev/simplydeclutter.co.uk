@@ -1,5 +1,3 @@
-const Header: React.FC = () => {
-  return <header></header>;
-};
+const Header: React.FC = () => <header />;
 
 export { Header };

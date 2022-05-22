@@ -3,16 +3,13 @@ import "@testing-library/jest-dom/extend-expect";
 import { render } from "@testing-library/react";
 
 // Wrap our tests in a component which adds our providers
-const TestWrapper: React.FC<{ children?: React.ReactNode }> = ({
+const TestWrapper: React.FC<{ children: React.ReactElement }> = ({
   children,
-}) => {
-  return <>{children}</>;
-};
+}) => ({ ...children });
 
 // Use the custom render function to add our wrapper to the tested component
-const customRender = (ui: any, options?: any) => {
-  return render(ui, { wrapper: TestWrapper, ...options });
-};
+const customRender = (ui: any, options?: any) =>
+  render(ui, { wrapper: TestWrapper, ...options });
 
 /**
  * Helper function to return an object with all the meta elements in the baseElement

@@ -1,5 +1,3 @@
-const Link: React.FC = () => {
-  return <a></a>;
-};
+const Link: React.FC = () => <a />;
 
 export { Link };

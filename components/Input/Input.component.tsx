@@ -1,5 +1,3 @@
-const Input: React.FC = () => {
-  return <input />;
-};
+const Input: React.FC = () => <input />;
 
 export { Input };

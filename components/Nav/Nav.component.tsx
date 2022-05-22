@@ -1,5 +1,3 @@
-const Nav: React.FC = () => {
-  return <nav></nav>;
-};
+const Nav: React.FC = () => <nav />;
 
 export { Nav };

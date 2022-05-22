@@ -1,5 +1,3 @@
-const Modal: React.FC = () => {
-  return <aside></aside>;
-};
+const Modal: React.FC = () => <aside />;
 
 export { Modal };

@@ -1,5 +1,3 @@
-const ListItem: React.FC = () => {
-  return <li></li>;
-};
+const ListItem: React.FC = () => <li />;
 
 export { ListItem };
