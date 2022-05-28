@@ -1,4 +1,4 @@
-import { FormEvent, FormEventHandler, HTMLAttributes } from "react";
+import { FormEventHandler, HTMLAttributes } from "react";
 import styled from "styled-components";
 
 interface FormProps extends HTMLAttributes<HTMLFormElement> {
