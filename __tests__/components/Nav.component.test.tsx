@@ -1,4 +1,5 @@
 import { Nav, NavLinkInterface } from "components/Nav/Nav.component";
+import { act } from "react-dom/test-utils";
 import { render, screen } from "utils";
 
 const CHILD_IDS = ["child1", "child2"];
@@ -72,5 +73,43 @@ describe("<Nav />", () => {
     TWO_TIER_NAV_LINKS[0].subLinks?.forEach((link) => {
       expect(utils.getByText(link.label)).toBeInTheDocument();
     });
+  });
+
+  it("will have a child with the class nav-buttons", () => {
+    const { utils, element } = setupTest(false);
+    expect(element.querySelector(":scope .nav-buttons")).toBeInTheDocument();
+  });
+
+  it("will have a child with the class nav-links", () => {
+    const { utils, element } = setupTest(false);
+    expect(element.querySelector(":scope .nav-links")).toBeInTheDocument();
+  });
+
+  it("will set the nav-links aria-expanded to true on screens bigger than 600px", () => {
+    global.window.innerWidth = 601;
+    const { element } = setupTest(false);
+    const links = element.querySelector(":scope .nav-links");
+    expect(links?.getAttribute("aria-expanded")).toBe("true");
+  });
+
+  it("will toggle the aria-expanded attr of the nav-links element when the button is clicked", () => {
+    global.window.innerWidth = 600;
+    const { element } = setupTest(false);
+    const links = element.querySelector(":scope .nav-links");
+    const button = element.querySelector(":scope button") as HTMLButtonElement;
+
+    expect(links?.getAttribute("aria-expanded")).toBe("false");
+    act(() => {
+      button.click();
+    });
+    expect(links?.getAttribute("aria-expanded")).toBe("true");
+  });
+
+  it("will set the nav-links element aria-expanded attr to false on screens less than 600px", () => {
+    global.window.innerWidth = 600;
+    const { element } = setupTest(false);
+    const links = element.querySelector(":scope .nav-links");
+
+    expect(links?.getAttribute("aria-expanded")).toBe("false");
   });
 });
