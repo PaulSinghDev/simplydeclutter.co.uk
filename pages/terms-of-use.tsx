@@ -9,8 +9,8 @@ const Services: NextPage = () => {
   return (
     <div>
       <Meta
-        title={pages.services.title}
-        description={pages.services.description}
+        title={pages.termsOfUse.title}
+        description={pages.termsOfUse.description}
         url={`${siteInfo.url}${pathname}`}
         siteName={siteInfo.siteName}
         favicon={siteInfo.favicon}
