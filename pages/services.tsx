@@ -3,15 +3,15 @@ import { Meta, Nav } from "components";
 import { useRouter } from "next/router";
 import { pages, siteInfo, navLinks } from "data";
 
-const Home: NextPage = () => {
+const Services: NextPage = () => {
   const { pathname } = useRouter();
 
   return (
     <div>
       <Meta
-        title={pages.index.title}
+        title={pages.services.title}
+        description={pages.services.description}
         url={`${siteInfo.url}${pathname}`}
-        description={pages.index.description}
         siteName={siteInfo.siteName}
         favicon={siteInfo.favicon}
       />
@@ -21,4 +21,4 @@ const Home: NextPage = () => {
     </div>
   );
 };
-export default Home;
+export default Services;

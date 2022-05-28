@@ -10,3 +10,4 @@ export * from "components/Modal";
 export * from "components/Nav";
 export * from "components/Select";
 export * from "components/Option";
+export * from "components/Meta";
