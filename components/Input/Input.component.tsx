@@ -1,9 +1,28 @@
-import { HTMLAttributes } from "react";
+import { useInput } from "hooks/useInput.hook";
+import React, { HTMLAttributes } from "react";
 import styled from "styled-components";
 
-interface InputProps extends HTMLAttributes<HTMLInputElement> {}
+interface InputProps extends HTMLAttributes<HTMLInputElement> {
+  type: string;
+  initialValue: string | number;
+}
 
-const Input: React.FC<InputProps> = (props) => <StyledInput {...props} />;
+const Input: React.FC<InputProps> = ({ type, initialValue, ...rest }) => {
+  const { value, handleInput } = useInput(type, initialValue);
+  const handleChangeEvent: React.ChangeEventHandler = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    handleInput(e.currentTarget.value);
+  };
+  return (
+    <StyledInput
+      type={type}
+      value={value}
+      onChange={handleChangeEvent}
+      {...rest}
+    />
+  );
+};
 
 const StyledInput = styled.input``;
 
