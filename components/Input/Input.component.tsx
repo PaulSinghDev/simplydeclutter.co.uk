@@ -3,7 +3,7 @@ import React, { HTMLAttributes } from "react";
 import styled from "styled-components";
 
 interface InputProps extends HTMLAttributes<HTMLInputElement> {
-  type: string;
+  type: "text" | "number";
   initialValue: string | number;
 }
 
