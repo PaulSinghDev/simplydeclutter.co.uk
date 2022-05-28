@@ -22,43 +22,43 @@ const getAllMeta = (
 ): { [key: string]: Element | null } => {
   const title = baseElement.querySelector("title");
   const description = baseElement.querySelector('[name="description"]');
-  const icon = baseElement.querySelector('link[rel="icon"]');
   const robots = baseElement.querySelector('[name="robots"]');
   const ogTitle = baseElement.querySelector('[property="og:title"]');
   const ogDescription = baseElement.querySelector(
     '[property="og:description"]'
   );
-  const ogImage = baseElement.querySelector('[property="og:image"]');
-  const ogType = baseElement.querySelector('[property="og:type"]');
   const ogUrl = baseElement.querySelector('[property="og:url"]');
   const ogSiteName = baseElement.querySelector('[property="og:site_name"]');
+  const ogType = baseElement.querySelector('[property="og:type"]');
   const twitterTitle = baseElement.querySelector('[name="twitter:title"]');
   const twitterDescription = baseElement.querySelector(
     '[name="twitter:description"]'
   );
-  const twitterImage = baseElement.querySelector('[name="twitter:image"]');
-  const twitterSite = baseElement.querySelector('[name="twitter:site"]');
-  const twitterCreator = baseElement.querySelector('[name="twitter:creator"]');
-  const twitterCard = baseElement.querySelector('[name="twitter:card"]');
+  const icon = baseElement.querySelector('link[rel="icon"]');
+  //const ogImage = baseElement.querySelector('[property="og:image"]');
+  //const twitterImage = baseElement.querySelector('[name="twitter:image"]');
+  //const twitterSite = baseElement.querySelector('[name="twitter:site"]');
+  //const twitterCreator = baseElement.querySelector('[name="twitter:creator"]');
+  //const twitterCard = baseElement.querySelector('[name="twitter:card"]');
   return {
     title,
     description,
-    icon,
     robots,
     ogTitle,
     ogDescription,
-    ogImage,
-    ogType,
     ogUrl,
     ogSiteName,
     twitterTitle,
     twitterDescription,
-    twitterImage,
-    twitterSite,
-    twitterCreator,
-    twitterCard,
+    ogType,
+    icon,
+    //ogImage,
+    //twitterImage,
+    //twitterSite,
+    //twitterCreator,
+    //twitterCard,
   };
 };
-
 export * from "@testing-library/react";
+
 export { customRender as render, getAllMeta };
