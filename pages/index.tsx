@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Footer, Meta, Nav } from "components";
+import { Button, Footer, Header, Meta, Nav, Section } from "components";
 import { useRouter } from "next/router";
 import { pages, siteInfo, navLinks } from "data";
 
@@ -16,7 +16,30 @@ const Home: NextPage = () => {
         favicon={siteInfo.favicon}
       />
       <Nav links={navLinks} />
-      <main />
+      <Header fullHeight={true}>
+        <picture>
+          <img src="/assets/images/logos/full-logo-blue-700.svg" />
+        </picture>
+        <h1>Professionally declutter and organise your home</h1>
+        <Button>Read More</Button>
+      </Header>
+      <main>
+        <Section className="image-with-text">
+          <div className="image">
+            <picture>
+              <img src="/assets/images/examples/bathroom-flower-basket.jpg" />
+            </picture>
+          </div>
+          <div className="text">
+            <h2>Professionally Declutter and Organise Your Home with Hilary</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <Button>Read About Me</Button>
+          </div>
+        </Section>
+      </main>
       <Footer />
     </div>
   );
