@@ -47,7 +47,7 @@ const Footer: React.FC<FooterProps> = (props) => {
             </Link>
           </li>
           <li>
-            <Link url="//terms-of-use" title="Go to terms of use">
+            <Link url="/terms-of-use" title="Go to terms of use">
               Terms of Use
             </Link>
           </li>
@@ -63,6 +63,45 @@ const Footer: React.FC<FooterProps> = (props) => {
   );
 };
 
-const StyledFooter = styled.div``;
+const StyledFooter = styled.div`
+  background-color: var(--purple);
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--off-white-pink);
+
+  ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: block;
+    }
+  }
+
+  .footer-column {
+    width: 25%;
+    flex-grow: 1;
+    min-width: 250px;
+
+    picture {
+      display: block;
+      text-align: center;
+    }
+
+    h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.34rem;
+    }
+
+    a {
+      padding: 2px 0;
+      display: inline-block;
+    }
+  }
+`;
 
 export { Footer };
