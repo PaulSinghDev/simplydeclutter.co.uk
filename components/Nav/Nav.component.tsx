@@ -29,7 +29,9 @@ const Nav: React.FC<NavProps> = ({ links, ...rest }) => {
     }
   }, [width]);
 
-  const handleToggle: MouseEventHandler<HTMLButtonElement> = () => {
+  const handleToggle: MouseEventHandler<
+    HTMLButtonElement | HTMLDivElement
+  > = () => {
     setIsOpen(!isOpen);
   };
 
@@ -40,31 +42,41 @@ const Nav: React.FC<NavProps> = ({ links, ...rest }) => {
           className="burger-menu"
           aria-label="Toggle the navigation menu"
           onClick={handleToggle}
+          buttonStyle="transparent"
+          id="main-nav-toggle"
+          aria-controls="main-nav-links"
         >
           <IoMdMenu size={30} />
         </Button>
       </div>
-      <div className="nav-links" aria-expanded={isOpen}>
+      <div
+        className="nav-links"
+        aria-expanded={isOpen}
+        onClick={isOpen ? handleToggle : undefined}
+        aria-label="Main navigation links"
+        id="main-nav-links"
+      >
         <ul>
           {links.map((link: NavLinkInterface, i: number) => {
             return (
               <li key={`${Date.now()}-${i}-${link.label}`}>
                 <Link url={link.url} title={link.title}>
-                  <>
-                    <span>{link.label}</span>
-                    {!!link.subLinks && link.subLinks.length > 0 ? (
-                      <ul>
-                        {link.subLinks.map((subLink, i) => (
-                          <li key={`${Date.now()}-${i}-${subLink.label}`}>
-                            <Link url={subLink.url} title={subLink.title}>
-                              {subLink.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </>
+                  <span>{link.label}</span>
                 </Link>
+                {!!link.subLinks && link.subLinks.length > 0 ? (
+                  <ul className="nav-sub-links">
+                    {link.subLinks.map((subLink, i) => (
+                      <li
+                        key={`${Date.now()}-${i}-${subLink.label}`}
+                        className="nav-sub-link"
+                      >
+                        <Link url={subLink.url} title={subLink.title}>
+                          {subLink.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </li>
             );
           })}
@@ -77,12 +89,43 @@ const Nav: React.FC<NavProps> = ({ links, ...rest }) => {
 const StyledNav = styled.nav`
   display: flex;
   flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--off-white-pink);
+  padding: 12px;
 
   .nav-links {
     width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
 
     &[aria-expanded="false"] {
-      display: none;
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+      transition: opacity 0.3s ease 0s, max-height 0s 0.3s, visibility 0s 0.3s,
+        z-index 0s 0.3s;
+      ul {
+        transform: translateY(100%);
+      }
+    }
+
+    &[aria-expanded="true"] {
+      max-height: 100%;
+      opacity: 1;
+      visibility: visible;
+      z-index: 10;
+      transition: opacity 0.3s ease 0.1s, max-height 0s 0s, visibility 0s 0s,
+        z-index 0s 0s;
+      ul {
+        transform: translateY(0);
+      }
     }
 
     ul {
@@ -91,9 +134,17 @@ const StyledNav = styled.nav`
       padding: 0;
       display: flex;
       flex-direction: column;
+      background-color: #fff;
+      border-radius: 24px 24px 0 0;
+      padding: 24px;
+      bottom: 0;
+      position: absolute;
+      width: 95%;
+      left: 2.5%;
+      transition: 0.3s ease;
 
       li {
-        margin: 8px;
+        margin: 8px 0;
         a {
           padding: 12px 16px;
         }
@@ -103,6 +154,23 @@ const StyledNav = styled.nav`
 
   .nav-buttons {
     margin-left: auto;
+
+    button {
+      padding: 4px;
+      border-radius: 8px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      > svg {
+        color: var(--blue);
+        transition: 0.3s ease;
+      }
+      &:hover {
+        > svg {
+          color: var(--off-white-pink);
+        }
+      }
+    }
   }
 
   @media screen and (min-width: 600px) {
