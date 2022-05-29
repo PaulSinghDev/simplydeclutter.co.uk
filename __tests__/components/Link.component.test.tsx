@@ -3,8 +3,9 @@ import { render, screen } from "utils";
 
 const CHILD_IDS = ["child1", "child2"];
 const TEST_ID = "Link";
+const URL = "/hello";
 const LINK_COMPONENT = (
-  <Link data-testid={TEST_ID}>
+  <Link data-testid={TEST_ID} url={URL}>
     <span data-testid={CHILD_IDS[0]}></span>
     <span data-testid={CHILD_IDS[1]}></span>
   </Link>
