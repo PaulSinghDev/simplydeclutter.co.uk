@@ -1,19 +1,18 @@
-import { Link } from "components/Link/Link.component";
+import { Testimonials } from "components/Testimonials/Testimonials.component";
 import { render, screen } from "utils";
 
 const CHILD_IDS = ["child1", "child2"];
-const TEST_ID = "Link";
-const URL = "/hello";
-const LINK_COMPONENT = (
-  <Link data-testid={TEST_ID} url={URL}>
-    <span data-testid={CHILD_IDS[0]}></span>
-    <span data-testid={CHILD_IDS[1]}></span>
-  </Link>
+const TEST_ID = "Testimonials";
+const MODAL_COMPONENT = (
+  <Testimonials data-testid={TEST_ID}>
+    <div data-testid={CHILD_IDS[0]}></div>
+    <div data-testid={CHILD_IDS[1]}></div>
+  </Testimonials>
 );
 
-describe("<Link />", () => {
+describe("<Testimonials />", () => {
   beforeEach(() => {
-    render(LINK_COMPONENT);
+    render(MODAL_COMPONENT);
   });
 
   it("will render in the dom", () => {

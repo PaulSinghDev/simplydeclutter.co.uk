@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Meta, Nav } from "components";
+import { Footer, Meta, Nav } from "components";
 import { useRouter } from "next/router";
 import { pages, siteInfo, navLinks } from "data";
 const Contact: NextPage = () => {
@@ -16,7 +16,7 @@ const Contact: NextPage = () => {
       />
       <Nav links={navLinks} />
       <main />
-      <footer />
+      <Footer />
     </div>
   );
 };
