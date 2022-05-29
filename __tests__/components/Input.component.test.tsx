@@ -114,7 +114,7 @@ const setupTest = (type: "number" | "text" | "email", valid: boolean) => {
   }
 };
 
-jest.mock("hooks/useInput.hook.tsx");
+jest.mock("hooks/useInput.hook");
 
 const MockUseInput = useInput as jest.Mock;
 
