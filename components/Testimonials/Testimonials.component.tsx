@@ -91,6 +91,11 @@ const Testimonials: React.FC<TestimonialsProps> = ({
 
 const StyledTestimonials = styled.div`
   padding: 24px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   ul {
     list-style: none;
@@ -99,6 +104,10 @@ const StyledTestimonials = styled.div`
   }
 
   .testimonials__list {
+    height: 100%;
+    margin: auto 0;
+    width: 100%;
+
     .testimonial__item {
       &[aria-hidden="true"] {
         display: none;
@@ -158,6 +167,7 @@ const StyledTestimonials = styled.div`
     display: flex;
     margin: 24px;
     justify-content: center;
+    margin-top: auto;
 
     .testimonial__nav-button {
       position: relative;
