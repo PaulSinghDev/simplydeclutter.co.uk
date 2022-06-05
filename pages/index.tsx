@@ -2,6 +2,23 @@ import type { NextPage } from "next";
 import { Button, Footer, Header, Meta, Nav, Section } from "components";
 import { useRouter } from "next/router";
 import { pages, siteInfo, navLinks } from "data";
+import { Testimonial, Testimonials } from "components/Testimonials";
+
+const TESTIMONIALS: Testimonial[] = [
+  {
+    author: "H. Someone",
+    comment:
+      "This is my review which has a really long line and should wrap down.",
+    platform: "Tripadvisor",
+    url: "https://tripadvisor.com/",
+  },
+  {
+    author: "H. Someone Else",
+    comment: "This is my other review",
+    platform: "Facebook",
+    url: "https://facebook.com/",
+  },
+];
 
 const Home: NextPage = () => {
   const { pathname } = useRouter();
@@ -39,6 +56,7 @@ const Home: NextPage = () => {
             <Button>Read About Me</Button>
           </div>
         </Section>
+        <Testimonials testimonials={TESTIMONIALS} />
       </main>
       <Footer />
     </div>
