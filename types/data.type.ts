@@ -17,3 +17,16 @@ export interface PageData {
   title: string;
   description: string;
 }
+
+export interface Testimonial {
+  author: string;
+  comment: string;
+  platform: string;
+  url: string;
+}
+
+export interface Service {
+  title: string;
+  description: string;
+  icon: "shirt" | "iron";
+}

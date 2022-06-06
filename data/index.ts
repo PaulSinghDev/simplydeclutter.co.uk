@@ -1,6 +1,8 @@
-import companyInfo from "./companyInfo.data";
-import siteInfo from "./siteInfo.data";
-import * as pages from "./page";
-import { navLinks } from "./nav";
+import companyInfo from "data/companyInfo.data";
+import siteInfo from "data/siteInfo.data";
+import { testimonials } from "data/testimonials";
+import { services } from "data/services";
+import { navLinks } from "data/nav";
+import * as pages from "data/page";
 
-export { companyInfo, siteInfo, pages, navLinks };
+export { companyInfo, siteInfo, pages, navLinks, testimonials, services };

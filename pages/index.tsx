@@ -1,7 +1,16 @@
 import type { NextPage } from "next";
-import { Button, Footer, Header, Meta, Nav, Section } from "components";
+import {
+  Button,
+  Footer,
+  Header,
+  Meta,
+  Nav,
+  Section,
+  Services,
+} from "components";
 import { useRouter } from "next/router";
-import { pages, siteInfo, navLinks } from "data";
+import { pages, siteInfo, navLinks, testimonials, services } from "data";
+import { Testimonials } from "components/Testimonials";
 
 const Home: NextPage = () => {
   const { pathname } = useRouter();
@@ -39,6 +48,8 @@ const Home: NextPage = () => {
             <Button>Read About Me</Button>
           </div>
         </Section>
+        <Testimonials testimonials={testimonials} />
+        <Services services={services} />
       </main>
       <Footer />
     </div>

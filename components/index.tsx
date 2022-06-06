@@ -12,3 +12,4 @@ export * from "components/Select";
 export * from "components/Option";
 export * from "components/Meta";
 export * from "components/Section";
+export * from "components/Services";

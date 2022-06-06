@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = ({ fullHeight, ...rest }) => {
   const { height } = useDeviceSize();
   return (
     <StyledHeader
-      height={height}
+      height={height ?? undefined}
       fullHeight={fullHeight}
       {...rest}
     ></StyledHeader>
