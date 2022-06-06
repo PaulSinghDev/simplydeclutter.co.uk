@@ -1,7 +1,15 @@
 import type { NextPage } from "next";
-import { Button, Footer, Header, Meta, Nav, Section } from "components";
+import {
+  Button,
+  Footer,
+  Header,
+  Meta,
+  Nav,
+  Section,
+  Services,
+} from "components";
 import { useRouter } from "next/router";
-import { pages, siteInfo, navLinks, testimonials } from "data";
+import { pages, siteInfo, navLinks, testimonials, services } from "data";
 import { Testimonials } from "components/Testimonials";
 
 const Home: NextPage = () => {
@@ -41,6 +49,7 @@ const Home: NextPage = () => {
           </div>
         </Section>
         <Testimonials testimonials={testimonials} />
+        <Services services={services} />
       </main>
       <Footer />
     </div>
