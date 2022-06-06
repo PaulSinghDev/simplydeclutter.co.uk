@@ -8,13 +8,7 @@ import {
   useState,
 } from "react";
 import styled from "styled-components";
-
-export interface Testimonial {
-  author: string;
-  comment: string;
-  platform: string;
-  url: string;
-}
+import { Testimonial } from "types";
 
 interface TestimonialsProps extends HTMLAttributes<HTMLDivElement> {
   testimonials: Testimonial[];
@@ -149,6 +143,8 @@ const StyledTestimonials = styled.div`
         > footer {
           display: flex;
           justify-content: space-between;
+          max-width: 80%;
+          margin: auto;
 
           > a {
             font-weight: bold;
