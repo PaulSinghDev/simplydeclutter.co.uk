@@ -1,7 +1,5 @@
-import {
-  Testimonials,
-  Testimonial,
-} from "components/Testimonials/Testimonials.component";
+import { Testimonials } from "components/Testimonials/Testimonials.component";
+import { Testimonial } from "types";
 import { fireEvent, render, screen } from "utils";
 
 const WRAPPER_CLASS = "testimonials__wrapper";
