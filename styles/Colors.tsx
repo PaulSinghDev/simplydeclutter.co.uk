@@ -9,7 +9,7 @@ export const Colors = createGlobalStyle`
         --light-purple: #CDA5F3;
         --pink: #DBA5F3;
         --off-white-blue: #F3F6FF;
-        --off-white-pink: #FAF6FE;
+        --off-white-pink: #fefefe;
         --yellow: #FCEA10;
     }
 `;
