@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import {
+  Card,
   Button,
   Footer,
   Header,
@@ -7,10 +8,75 @@ import {
   Nav,
   Section,
   Services,
+  Link,
 } from "components";
 import { useRouter } from "next/router";
 import { pages, siteInfo, navLinks, testimonials, services } from "data";
 import { Testimonials } from "components/Testimonials";
+import { HTMLAttributes } from "react";
+import styled from "styled-components";
+
+interface HomeWhyMeSectionProps extends HTMLAttributes<HTMLDivElement> {}
+
+const HomeWhyMeSection: React.FC<HomeWhyMeSectionProps> = ({ ...rest }) => {
+  return (
+    <StyledHomeWhyMeSection {...rest}>
+      <h2>Why Choose Me</h2>
+      <div className="home-why-me-cards">
+        <Card
+          background={"blue"}
+          title="Free Consultation"
+          content={[
+            "If you are ready to declutter and regain  control of your living space we can arrange a free 1 to 1 Zoom consultation right away!",
+          ]}
+        ></Card>
+        <Card
+          background={"blue"}
+          title="Fair Pricing"
+          content={[
+            "Pricing starts at £35 per hour with a minimum of 3 hours per job.",
+          ]}
+        ></Card>
+      </div>
+      <Link url="/pricing" asButton={true}>
+        View Pricing
+      </Link>
+    </StyledHomeWhyMeSection>
+  );
+};
+
+const StyledHomeWhyMeSection = styled.div`
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+
+  > h2 {
+    color: var(--purple);
+  }
+
+  > .home-why-me-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    > div {
+      max-width: 300px;
+      min-width: 250px;
+    }
+  }
+
+  > a {
+    margin-top 24px;
+    display: inline-block;
+    background-color: var(--purple);
+    font-weight: bold;
+  }
+`;
 
 const Home: NextPage = () => {
   const { pathname } = useRouter();
@@ -50,6 +116,9 @@ const Home: NextPage = () => {
         </Section>
         <Testimonials testimonials={testimonials} />
         <Services services={services} />
+        <Section>
+          <HomeWhyMeSection />
+        </Section>
       </main>
       <Footer />
     </div>

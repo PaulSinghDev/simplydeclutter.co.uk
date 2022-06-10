@@ -40,6 +40,7 @@ const Services: React.FC<ServicesProps> = ({ services, ...rest }) => {
 
 const StyledServices = styled.div`
   padding: 24px;
+  background: var(--purple);
 
   ul {
     list-style-type: none;
@@ -48,19 +49,29 @@ const StyledServices = styled.div`
   }
 
   > h2 {
-    color: var(--purple);
+    color: var(--off-white-pink);
+    text-align: center;
+  }
+
+  .services__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .service__item {
     padding: 12px;
     background-color: #fff;
-    margin: 12px 0;
+    margin: 12px 8px;
     border-radius: 14px;
     box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    display: flex;
 
     .service__item-content {
       display: flex;
       align-items: center;
+      margin: auto;
 
       .service__item-icon {
         width: calc(30% - 8px);
@@ -76,6 +87,7 @@ const StyledServices = styled.div`
           height: auto;
         }
       }
+
       .service__item-details {
         width: calc(70% - 8px);
         margin-left: 8px;
@@ -101,6 +113,15 @@ const StyledServices = styled.div`
     text-align: center;
     > a {
       display: inline-block;
+      background: transparent;
+      color: var(--off-white-pink);
+      border: 2px solid var(--off-white-pink);
+      transition: 0.3s ease;
+
+      &:hover {
+        background-color: var(--off-black);
+        border-color: var(--off-black);
+      }
     }
   }
 `;
