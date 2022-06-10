@@ -95,7 +95,7 @@ const StyledNav = styled.nav`
   right: 0;
   background-color: var(--off-white-pink);
   padding: 12px;
-
+  z-index: 1;
   .nav-links {
     width: 100%;
     height: 100%;
@@ -174,10 +174,22 @@ const StyledNav = styled.nav`
   }
 
   @media screen and (min-width: 600px) {
+    top: 0;
+
     .nav-links {
       width: auto;
+      height: auto;
+      bottom: unset;
+      width: 100%;
+      background: transparent;
+      top: 0;
+
       ul {
         flex-direction: row;
+        position: static;
+        width: 100%;
+        background: var(--off-white-pink);
+        justify-content: flex-end;
       }
     }
     .nav-buttons {
