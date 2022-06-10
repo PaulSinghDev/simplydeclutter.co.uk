@@ -9,15 +9,19 @@ const Section: React.FC<SectionProps> = ({ ...rest }) => (
 
 const StyledSection = styled.section`
   width: 100%;
-  padding: 24px;
+  padding: 72px 24px;
 
   &.image-with-text {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--purple);
 
     > .image {
       width: 100%;
-      margin: auto;
+      max-width: 400px;
+      margin: 14px;
 
       picture {
         display: inline-flex;
@@ -37,8 +41,10 @@ const StyledSection = styled.section`
     }
 
     > .text {
-      color: var(--blue);
+      color: var(--off-white-pink);
       text-align: center;
+      max-width: 400px;
+      margin: 24px;
 
       button {
         margin: 24px 0;
