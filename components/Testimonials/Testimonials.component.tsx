@@ -84,7 +84,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({
 };
 
 const StyledTestimonials = styled.div`
-  padding: 24px;
+  padding: 72px 24px;
   min-height: 400px;
   display: flex;
   flex-direction: column;
@@ -103,13 +103,17 @@ const StyledTestimonials = styled.div`
     width: 100%;
 
     .testimonial__item {
+      text-align: center;
+
       &[aria-hidden="true"] {
         display: none;
       }
 
       > blockquote {
-        margin: 24px 0;
+        margin: 24px auto;
         color: var(--purple);
+        max-width: 900px;
+        display: inline-block;
 
         > p {
           font-weight: bold;
@@ -132,19 +136,19 @@ const StyledTestimonials = styled.div`
           }
 
           &::before {
-            left: 0;
+            left: -0.5rem;
           }
 
           &::after {
-            right: 0;
+            right: -0.5rem;
           }
         }
 
         > footer {
           display: flex;
-          justify-content: space-between;
-          max-width: 80%;
+          justify-content: space-around;
           margin: auto;
+          white-space: nowrap;
 
           > a {
             font-weight: bold;
