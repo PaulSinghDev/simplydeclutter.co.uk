@@ -69,7 +69,6 @@ const StyledFooter = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
   color: var(--off-white-pink);
 
   ul {
@@ -86,15 +85,20 @@ const StyledFooter = styled.div`
     width: 25%;
     flex-grow: 1;
     min-width: 250px;
+    padding: 24px;
 
     picture {
       display: block;
       text-align: center;
+      > img {
+        max-width: 100%;
+      }
     }
 
     h4 {
       font-size: 1.3rem;
       margin-bottom: 0.34rem;
+      margin-top: 0;
     }
 
     a {
