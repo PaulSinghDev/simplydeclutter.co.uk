@@ -7,19 +7,12 @@ interface HeaderProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Header: React.FC<HeaderProps> = ({ fullHeight, ...rest }) => {
-  const { height } = useDeviceSize();
-  return (
-    <StyledHeader
-      height={height ?? undefined}
-      fullHeight={fullHeight}
-      {...rest}
-    ></StyledHeader>
-  );
+  return <StyledHeader fullHeight={fullHeight} {...rest}></StyledHeader>;
 };
 
-const StyledHeader = styled.header<{ height: number; fullHeight?: boolean }>`
-  ${({ fullHeight: _fullHeight, height: _height }) => {
-    const heightToUse = _fullHeight === true ? `${_height}px` : "auto";
+const StyledHeader = styled.header<{ fullHeight?: boolean }>`
+  ${({ fullHeight: _fullHeight }) => {
+    const heightToUse = _fullHeight === true ? `calc(100 * var(--vh))` : "auto";
     return `
         height: ${heightToUse};
         display: flex;
@@ -44,6 +37,7 @@ const StyledHeader = styled.header<{ height: number; fullHeight?: boolean }>`
         img {
             max-width: calc(100% - 24px);
             margin: auto;
+            width: 400px;
         }
 
         button {
