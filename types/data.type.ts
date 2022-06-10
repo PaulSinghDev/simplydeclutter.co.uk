@@ -28,5 +28,15 @@ export interface Testimonial {
 export interface Service {
   title: string;
   description: string;
-  icon: "shirt" | "iron";
+  icon: Icons;
 }
+
+export type Icons =
+  | "shirt"
+  | "iron"
+  | "drawer"
+  | "shrink"
+  | "baby"
+  | "grave"
+  | "box"
+  | "docs";
