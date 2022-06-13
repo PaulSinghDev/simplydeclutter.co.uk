@@ -85,13 +85,6 @@ describe("<Nav />", () => {
     expect(element.querySelector(":scope .nav-links")).toBeInTheDocument();
   });
 
-  it("will set the nav-links aria-expanded to true on screens bigger than 600px", () => {
-    global.window.innerWidth = 601;
-    const { element } = setupTest(false);
-    const links = element.querySelector(":scope .nav-links");
-    expect(links?.getAttribute("aria-expanded")).toBe("true");
-  });
-
   it("will toggle the aria-expanded attr of the nav-links element when the button is clicked", () => {
     global.window.innerWidth = 600;
     const { element } = setupTest(false);
