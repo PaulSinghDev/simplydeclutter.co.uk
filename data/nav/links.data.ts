@@ -4,13 +4,13 @@ const navLinks: NavLinkInterface[] = [
   {
     title: "Prices",
     label: "Prices",
-    url: "/prices",
+    url: "/prices-services#prices",
     isExternal: false,
   },
   {
     title: "Services",
     label: "Services",
-    url: "/services",
+    url: "/prices-services#services",
     isExternal: false,
   },
   {
