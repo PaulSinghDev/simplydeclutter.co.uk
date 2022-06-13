@@ -16,11 +16,11 @@ const StyledButton = styled.button<{ buttonStyle: string }>`
     let color;
     switch (buttonStyle) {
       case "primary":
-        bgColor = "var(--light-purple)";
+        bgColor = "var(--purple)";
         color = "#fff";
         break;
       case "secondary":
-        bgColor = "var(--purple)";
+        bgColor = "var(--lavender)";
         color = "#fff";
         break;
       case "tertiary":
