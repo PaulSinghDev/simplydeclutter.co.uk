@@ -40,7 +40,7 @@ const Services: React.FC<ServicesProps> = ({ services, ...rest }) => {
 
 const StyledServices = styled.div`
   padding: 24px;
-  background: var(--purple);
+  background: transparent;
 
   ul {
     list-style-type: none;
@@ -49,7 +49,7 @@ const StyledServices = styled.div`
   }
 
   > h2 {
-    color: var(--off-white-pink);
+    color: var(--purple);
     text-align: center;
   }
 
@@ -114,13 +114,16 @@ const StyledServices = styled.div`
     > a {
       display: inline-block;
       background: transparent;
-      color: var(--off-white-pink);
-      border: 2px solid var(--off-white-pink);
+      color: var(--purple);
+      border: 2px solid var(--purple);
       transition: 0.3s ease;
+      background: linear-gradient(90deg, var(--purple) 50%, transparent 50%);
+      background-size: 200%;
+      background-position: -100%;
 
       &:hover {
-        background-color: var(--off-black);
-        border-color: var(--off-black);
+        background-position: 0%;
+        color: var(--off-white);
       }
     }
   }
