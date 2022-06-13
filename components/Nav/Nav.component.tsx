@@ -1,6 +1,12 @@
 import { Link } from "components";
 import { Button } from "components/Button";
-import { HTMLAttributes, MouseEventHandler, useEffect, useState } from "react";
+import {
+  HTMLAttributes,
+  MouseEventHandler,
+  useEffect,
+  useState,
+  useRef,
+} from "react";
 import styled from "styled-components";
 import { useDeviceSize } from "hooks";
 import { IoMdMenu } from "react-icons/io";
@@ -20,13 +26,18 @@ interface NavProps extends HTMLAttributes<HTMLDivElement> {
 const Nav: React.FC<NavProps> = ({ links, ...rest }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { width } = useDeviceSize();
+  const nav = useRef<any>();
 
   useEffect(() => {
-    if (window.innerWidth > 600) {
+    if (width > 600) {
       setIsOpen(true);
     } else {
       setIsOpen(false);
     }
+    document.documentElement.style.setProperty(
+      "--nav-height",
+      `${nav.current.offsetHeight}px`
+    );
   }, [width]);
 
   const handleToggle: MouseEventHandler<
@@ -36,7 +47,7 @@ const Nav: React.FC<NavProps> = ({ links, ...rest }) => {
   };
 
   return (
-    <StyledNav {...rest}>
+    <StyledNav ref={nav} {...rest}>
       <div className="nav-buttons">
         <Button
           className="burger-menu"
@@ -147,6 +158,13 @@ const StyledNav = styled.nav`
         margin: 8px 0;
         a {
           padding: 12px 16px;
+          font-weight: bold;
+          color: var(--purple);
+
+          &:hover {
+            color: var(--off-white);
+            text-decoration: none;
+          }
         }
       }
     }
