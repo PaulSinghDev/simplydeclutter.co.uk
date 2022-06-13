@@ -1,4 +1,3 @@
-import { useDeviceSize } from "hooks";
 import { HTMLAttributes } from "react";
 import styled from "styled-components";
 
@@ -12,14 +11,18 @@ const Header: React.FC<HeaderProps> = ({ fullHeight, ...rest }) => {
 
 const StyledHeader = styled.header<{ fullHeight?: boolean }>`
   ${({ fullHeight: _fullHeight }) => {
-    const heightToUse = _fullHeight === true ? `calc(100 * var(--vh))` : "auto";
+    const heightToUse =
+      _fullHeight === true
+        ? `calc(100 * var(--vh) - var(--nav-height))`
+        : "auto";
     return `
-        height: ${heightToUse};
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        padding: 12px;
+      height: ${heightToUse};
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px;
+      padding-top: var(--nav-height);
         
         h1 {
             padding: 12px;
