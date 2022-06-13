@@ -9,14 +9,14 @@ const Section: React.FC<SectionProps> = ({ ...rest }) => (
 
 const StyledSection = styled.section`
   width: 100%;
-  padding: 72px 24px;
+  padding: 24px;
 
   &.image-with-text {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: var(--purple);
+    background: transparent;
 
     > .image {
       width: 100%;
@@ -41,7 +41,7 @@ const StyledSection = styled.section`
     }
 
     > .text {
-      color: var(--off-white-pink);
+      color: var(--purple);
       text-align: center;
       max-width: 400px;
       margin: 24px;

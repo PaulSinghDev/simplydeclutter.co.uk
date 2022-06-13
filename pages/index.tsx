@@ -24,21 +24,21 @@ const HomeWhyMeSection: React.FC<HomeWhyMeSectionProps> = ({ ...rest }) => {
       <h2>Why Choose Me</h2>
       <div className="home-why-me-cards">
         <Card
-          background={"blue"}
+          background={"var(--blue)"}
           title="Free Consultation"
           content={[
             "If you are ready to declutter and regain  control of your living space we can arrange a free 1 to 1 Zoom consultation right away!",
           ]}
         ></Card>
         <Card
-          background={"blue"}
+          background={"var(--blue)"}
           title="Fair Pricing"
           content={[
             "Pricing starts at £35 per hour with a minimum of 3 hours per job.",
           ]}
         ></Card>
       </div>
-      <Link url="/pricing" asButton={true}>
+      <Link url="/prices-services#prices" asButton={true}>
         View Pricing
       </Link>
     </StyledHomeWhyMeSection>
@@ -95,7 +95,9 @@ const Home: NextPage = () => {
         <picture>
           <img src="/assets/images/logos/full-logo-blue-700.svg" />
         </picture>
-        <h1>Professionally declutter and organise your home</h1>
+        <h1>
+          Regain control <br /> of your living space
+        </h1>
         <Button>Read More</Button>
       </Header>
       <main>
@@ -114,8 +116,12 @@ const Home: NextPage = () => {
             <Button>Read About Me</Button>
           </div>
         </Section>
-        <Testimonials testimonials={testimonials} />
-        <Services services={services} />
+        <Section>
+          <Testimonials testimonials={testimonials} />
+        </Section>
+        <Section>
+          <Services services={services} />
+        </Section>
         <Section>
           <HomeWhyMeSection />
         </Section>

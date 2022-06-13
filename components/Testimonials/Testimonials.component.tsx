@@ -1,90 +1,50 @@
-import { siteInfo } from "data";
-import {
-  HTMLAttributes,
-  MouseEvent,
-  MouseEventHandler,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { ComponentType, HTMLAttributes } from "react";
 import styled from "styled-components";
-import { Testimonial } from "types";
+import { Slider } from "components/Slider";
+import { TestimonialInterface } from "types";
 
 interface TestimonialsProps extends HTMLAttributes<HTMLDivElement> {
-  testimonials: Testimonial[];
+  testimonials: TestimonialInterface[];
 }
+
+const Testimonial: React.FC<TestimonialInterface> = ({
+  comment,
+  url,
+  platform,
+  author,
+}) => {
+  return (
+    <blockquote>
+      <p>{comment}</p>
+      <footer>
+        <a
+          href={url}
+          title={`Read more about ${author}'s comment on ${platform}`}
+        >
+          Read more
+        </a>
+        <cite>{author}</cite>
+      </footer>
+    </blockquote>
+  );
+};
 
 const Testimonials: React.FC<TestimonialsProps> = ({
   testimonials,
   ...rest
 }) => {
-  // Set a state for our active slide
-  const [activeSlide, setActiveSlide] = useState<number>(0);
-  // Get the reference to the active slide
-  const activeSlideRef = useRef<HTMLLIElement>(null);
-  // Effect to handle slide changing
-  useEffect(() => {
-    if (activeSlideRef.current) {
-    }
-  }, [activeSlide]);
-
-  const handleSlideChange: MouseEventHandler<HTMLButtonElement> = (
-    e: MouseEvent<HTMLButtonElement>
-  ) => {
-    const associatedSlide = Number(e.currentTarget.dataset.index);
-    if (associatedSlide !== activeSlide) {
-      setActiveSlide(associatedSlide);
-    }
-  };
-
   return (
-    <StyledTestimonials className="testimonials__wrapper" {...rest}>
-      <ul className="testimonials__list">
-        {testimonials.map((testimonial, i) => (
-          <li
-            ref={i === activeSlide ? activeSlideRef : null}
-            className="testimonial__item"
-            key={`${Math.random().toString(36).substring(2, 7)}`}
-            data-index={i}
-            data-active={activeSlide === i}
-            aria-hidden={i !== activeSlide}
-            aria-label={`Testimonial for ${siteInfo.siteName} by ${testimonial.author} on ${testimonial.platform}`}
-          >
-            <blockquote>
-              <p>{testimonial.comment}</p>
-              <footer>
-                <a
-                  href={testimonial.url}
-                  title={`Read more about ${testimonial.author}'s comment on ${testimonial.platform}`}
-                >
-                  Read more
-                </a>
-                <cite>{testimonial.author}</cite>
-              </footer>
-            </blockquote>
-          </li>
-        ))}
-      </ul>
-      <ul className="testimonials__nav">
-        {testimonials.map((_t, i) => (
-          <li key={`${Math.random().toString(36).substring(2, 7)}`}>
-            <button
-              data-active={i === activeSlide}
-              className="testimonial__nav-button"
-              data-index={i}
-              aria-label={`Slide to testimonial ${i}`}
-              onClick={handleSlideChange}
-              disabled={i === activeSlide}
-            ></button>
-          </li>
-        ))}
-      </ul>
-    </StyledTestimonials>
+    <StyledTestimonials
+      className="testimonials__wrapper"
+      slides={testimonials.map((testimonial) => () => (
+        <Testimonial {...testimonial} />
+      ))}
+      {...rest}
+    />
   );
 };
 
-const StyledTestimonials = styled.div`
-  padding: 72px 24px;
+const StyledTestimonials = styled(Slider)`
   min-height: 400px;
   display: flex;
   flex-direction: column;
@@ -97,16 +57,33 @@ const StyledTestimonials = styled.div`
     padding: 0;
   }
 
-  .testimonials__list {
+  > .slider__list {
     height: 100%;
     margin: auto 0;
     width: 100%;
+    display: flex;
+    position: relative;
 
-    .testimonial__item {
+    .slide__item {
       text-align: center;
+      flex-basis: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      transform: translateX(-100%);
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+      transition: transform 0.5s ease-in-out, opacity 0.3s ease,
+        visibility 0s 0.5s, z-index 0s 0.5s;
 
-      &[aria-hidden="true"] {
-        display: none;
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+        transform: translateX(0);
+        transition: transform 0.5s ease-in-out 0.1s, opacity 0.3s ease 0.1s,
+          visibility 0s 0s, z-index 0s 0s;
       }
 
       > blockquote {
@@ -151,9 +128,14 @@ const StyledTestimonials = styled.div`
           white-space: nowrap;
 
           > a {
+            color: var(--purple);
             font-weight: bold;
             margin-right: 8px;
             text-decoration: underline;
+
+            &:hover {
+              color: var(--off-white);
+            }
           }
           > cite {
             margin-left: 8px;
@@ -163,13 +145,13 @@ const StyledTestimonials = styled.div`
     }
   }
 
-  .testimonials__nav {
+  .slider__nav {
     display: flex;
     margin: 24px;
     justify-content: center;
     margin-top: auto;
 
-    .testimonial__nav-button {
+    .slide__nav-button {
       position: relative;
       width: 30px;
       height: 30px;
@@ -194,6 +176,7 @@ const StyledTestimonials = styled.div`
 
       &[disabled] {
         opacity: 0.3;
+        cursor: initial;
 
         &::after {
           background: var(--off-black);
