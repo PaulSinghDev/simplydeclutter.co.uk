@@ -38,7 +38,7 @@ const HomeWhyMeSection: React.FC<HomeWhyMeSectionProps> = ({ ...rest }) => {
           ]}
         ></Card>
       </div>
-      <Link url="/pricing" asButton={true}>
+      <Link url="/prices-services#prices" asButton={true}>
         View Pricing
       </Link>
     </StyledHomeWhyMeSection>
@@ -116,8 +116,12 @@ const Home: NextPage = () => {
             <Button>Read About Me</Button>
           </div>
         </Section>
-        <Testimonials testimonials={testimonials} />
-        <Services services={services} />
+        <Section>
+          <Testimonials testimonials={testimonials} />
+        </Section>
+        <Section>
+          <Services services={services} />
+        </Section>
         <Section>
           <HomeWhyMeSection />
         </Section>
