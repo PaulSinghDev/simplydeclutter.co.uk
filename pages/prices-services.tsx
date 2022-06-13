@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import { Card, Footer, Meta, Nav, Section, Slider } from "components";
+import { Card, Footer, Meta, Nav, Section, Services, Slider } from "components";
 import { useRouter } from "next/router";
 import { pages, siteInfo, navLinks } from "data";
 import styled from "styled-components";
 import { useEffect, useRef } from "react";
-
+import { services } from "data";
 const Prices: NextPage = () => {
   const { pathname } = useRouter();
   const wrapper = useRef<any>();
@@ -103,6 +103,9 @@ const Prices: NextPage = () => {
             />
           </div>
         </StyledCardSection>
+        <Section>
+          <Services services={services} id="services" />
+        </Section>
       </main>
       <Footer />
     </div>
