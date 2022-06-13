@@ -13,3 +13,4 @@ export * from "components/Option";
 export * from "components/Meta";
 export * from "components/Section";
 export * from "components/Services";
+export * from "components/Slider";
