@@ -1,11 +1,11 @@
 import { render } from "utils";
 import { Services } from "components";
-import { Service } from "types";
+import { ServiceInterface } from "types";
 
 const TEST_ID = "services";
 const VIEW_ALL_TITLE = "Go to our services page";
 const VIEW_ALL_LABEL = "View all";
-const SERVICES: Service[] = [
+const SERVICES: ServiceInterface[] = [
   {
     title: "Service 1",
     description: "This is the service which we are offering here",

@@ -1,6 +1,6 @@
-import { Service } from "types";
+import { ServiceInterface } from "types";
 
-const services: Service[] = [
+const services: ServiceInterface[] = [
   {
     title: "Decluttering",
     description:
