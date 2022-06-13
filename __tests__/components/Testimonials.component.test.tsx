@@ -1,5 +1,5 @@
 import { Testimonials } from "components/Testimonials/Testimonials.component";
-import { Testimonial } from "types";
+import { TestimonialInterface } from "types";
 import { fireEvent, render, screen } from "utils";
 
 const WRAPPER_CLASS = "testimonials__wrapper";
@@ -8,7 +8,7 @@ const ITEM_CLASS = "testimonial__item";
 const NAV_CLASS = "testimonials__nav";
 const NAV_BUTTON_CLASS = "testimonial__nav-button";
 const TEST_ID = "Testimonials";
-const TESTIMONIALS: Testimonial[] = [
+const TESTIMONIALS: TestimonialInterface[] = [
   {
     author: "H. Someone",
     comment: "This is my review",

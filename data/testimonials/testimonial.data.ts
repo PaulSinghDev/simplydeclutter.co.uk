@@ -1,6 +1,6 @@
-import { Testimonial } from "types";
+import { TestimonialInterface } from "types";
 
-const testimonials: Testimonial[] = [
+const testimonials: TestimonialInterface[] = [
   {
     author: "H. Someone",
     comment:
