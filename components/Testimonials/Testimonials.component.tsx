@@ -45,7 +45,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({
 };
 
 const StyledTestimonials = styled(Slider)`
-  padding: 72px 24px;
   min-height: 400px;
   display: flex;
   flex-direction: column;
@@ -58,14 +57,14 @@ const StyledTestimonials = styled(Slider)`
     padding: 0;
   }
 
-  .testimonials__list {
+  > .slider__list {
     height: 100%;
     margin: auto 0;
     width: 100%;
     display: flex;
     position: relative;
 
-    .testimonial__item {
+    .slide__item {
       text-align: center;
       flex-basis: 100%;
       width: 100%;
@@ -146,13 +145,13 @@ const StyledTestimonials = styled(Slider)`
     }
   }
 
-  .testimonials__nav {
+  .slider__nav {
     display: flex;
     margin: 24px;
     justify-content: center;
     margin-top: auto;
 
-    .testimonial__nav-button {
+    .slide__nav-button {
       position: relative;
       width: 30px;
       height: 30px;
