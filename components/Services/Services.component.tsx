@@ -1,11 +1,11 @@
 import { HTMLAttributes } from "react";
 import styled from "styled-components";
-import { Service } from "types";
+import { ServiceInterface } from "types";
 import { useIcon } from "hooks";
 import { Link } from "components/Link";
 
 interface ServicesProps extends HTMLAttributes<HTMLDivElement> {
-  services: Service[];
+  services: ServiceInterface[];
 }
 const Services: React.FC<ServicesProps> = ({ services, ...rest }) => {
   return (
@@ -39,7 +39,6 @@ const Services: React.FC<ServicesProps> = ({ services, ...rest }) => {
 };
 
 const StyledServices = styled.div`
-  padding: 24px;
   background: transparent;
 
   ul {

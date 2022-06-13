@@ -9,7 +9,7 @@ const Section: React.FC<SectionProps> = ({ ...rest }) => (
 
 const StyledSection = styled.section`
   width: 100%;
-  padding: 72px 24px;
+  padding: 24px;
 
   &.image-with-text {
     display: flex;

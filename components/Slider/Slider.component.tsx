@@ -121,7 +121,6 @@ const Slider: React.FC<SliderProps> = ({ slides, ...rest }) => {
 };
 
 const StyledSlider = styled.div`
-  padding: 72px 24px;
   min-height: 400px;
   display: flex;
   flex-direction: column;
