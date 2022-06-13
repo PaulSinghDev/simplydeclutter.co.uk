@@ -9,9 +9,9 @@ const Footer: React.FC<FooterProps> = (props) => {
   return (
     <StyledFooter {...props}>
       <div className="footer-column">
-        <picture>
+        <Link url="/" title="Go back to the home page" className="footer-logo">
           <img src="/assets/images/logos/full-logo-white.png" />
-        </picture>
+        </Link>
       </div>
       <div className="footer-column">
         <h4>Useful Links</h4>
@@ -87,9 +87,14 @@ const StyledFooter = styled.div`
     min-width: 250px;
     padding: 24px;
 
-    picture {
+    > a.footer-logo {
       display: block;
       text-align: center;
+
+      &:hover {
+        background-color: transparent;
+      }
+
       > img {
         max-width: 100%;
       }
