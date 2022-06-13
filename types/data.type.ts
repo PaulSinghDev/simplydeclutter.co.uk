@@ -18,14 +18,14 @@ export interface PageData {
   description: string;
 }
 
-export interface Testimonial {
+export interface TestimonialInterface {
   author: string;
   comment: string;
   platform: string;
   url: string;
 }
 
-export interface Service {
+export interface ServiceInterface {
   title: string;
   description: string;
   icon: Icons;
