@@ -36,73 +36,76 @@ const Prices: NextPage = () => {
       />
       <Nav links={navLinks} />
       <main>
-        <StyledIntroSection>
-          <h1>Pricing & Services</h1>
-          <p>
-            If you feel overwhelmed or find it hard to relax, if you are
-            stressed out by your disorganised home or are struggling to let go
-            of things you no longer need I can help you to regain control and
-            create a calm, more organised home.
-          </p>
-          <p>
-            I offer a range of professional organisational services which all
-            start with a simple phone call to see what your requirements are.
-          </p>
-          <p>
-            The below is a breakdown of the process which we will undertake
-            together and how we can work to declutter your home and regain
-            control of your living space.
-          </p>
-        </StyledIntroSection>
-        <StyledCardSection>
-          <div className="process-wrapper">
-            <Slider
-              slides={[
-                () => (
-                  <Card
-                    className="process-card"
-                    title="Step 1: First Contact"
-                    content={[
-                      "In order to get an idea of the services you require and agree upon a plan of action the first step is to arrange a brief call.",
-                      "During our call we will discuss your goals and work to dispel any worries you may have.",
-                    ]}
-                    background="var(--off-white)"
-                    text={{ color: "var(--blue)" }}
-                    shadow={true}
-                    image="/assets/images/photos/stock-photo-video-call.jpeg"
-                  />
-                ),
-                () => (
-                  <Card
-                    className="process-card"
-                    title="Step 2: House Visit"
-                    content={[
-                      "I will arrive at your property at the time and date we agree in our initial call and then begin assessing the plan of action.",
-                      "After a brief scout of the area you wish to regain control of we will agree an order in which to work and then I will start to organise the space.",
-                    ]}
-                    background="var(--off-white)"
-                    text={{ color: "var(--blue)" }}
-                    shadow={true}
-                    image="/assets/images/photos/stock-photo-house.jpeg"
-                  ></Card>
-                ),
-                () => (
-                  <Card
-                    className="process-card"
-                    title="Step 3: Relax"
-                    content={[
-                      "Once I have finished organising your space we will assess the outcome together before I leave you to enjoy the peace and serenity of a decluttered living space.",
-                    ]}
-                    background="var(--off-white)"
-                    text={{ color: "var(--blue)" }}
-                    shadow={true}
-                    image="/assets/images/photos/stock-photo-decluttered-house.jpeg"
-                  ></Card>
-                ),
-              ]}
-            />
-          </div>
-        </StyledCardSection>
+        <StyledProcessSection>
+          <StyledIntroSection>
+            <h1>Pricing & Services</h1>
+            <p>
+              If you feel overwhelmed or find it hard to relax, if you are
+              stressed out by your disorganised home or are struggling to let go
+              of things you no longer need I can help you to regain control and
+              create a calm, more organised home.
+            </p>
+            <p>
+              I offer a range of professional organisational services which all
+              start with a simple phone call to see what your requirements are.
+            </p>
+            <p>
+              The below is a breakdown of the process which we will undertake
+              together and how we can work to declutter your home and regain
+              control of your living space.
+            </p>
+          </StyledIntroSection>
+          <StyledCardSection>
+            <div className="process-wrapper">
+              <Slider
+                slides={[
+                  () => (
+                    <Card
+                      className="process-card"
+                      title="Step 1: First Contact"
+                      content={[
+                        "In order to get an idea of the services you require and agree upon a plan of action the first step is to arrange a brief call.",
+                        "During our call we will discuss your goals and work to dispel any worries you may have.",
+                      ]}
+                      background="var(--off-white)"
+                      text={{ color: "var(--blue)" }}
+                      shadow={true}
+                      image="/assets/images/photos/stock-photo-video-call.jpeg"
+                    />
+                  ),
+                  () => (
+                    <Card
+                      className="process-card"
+                      title="Step 2: House Visit"
+                      content={[
+                        "I will arrive at your property at the time and date we agree in our initial call and then begin assessing the plan of action.",
+                        "After a brief scout of the area you wish to regain control of we will agree an order in which to work and then I will start to organise the space.",
+                      ]}
+                      background="var(--off-white)"
+                      text={{ color: "var(--blue)" }}
+                      shadow={true}
+                      image="/assets/images/photos/stock-photo-house.jpeg"
+                    ></Card>
+                  ),
+                  () => (
+                    <Card
+                      className="process-card"
+                      title="Step 3: Relax"
+                      content={[
+                        "Once I have finished organising your space we will assess the outcome together before I leave you to enjoy the peace and serenity of a decluttered living space.",
+                      ]}
+                      background="var(--off-white)"
+                      text={{ color: "var(--blue)" }}
+                      shadow={true}
+                      image="/assets/images/photos/stock-photo-decluttered-house.jpeg"
+                    ></Card>
+                  ),
+                ]}
+              />
+            </div>
+          </StyledCardSection>
+        </StyledProcessSection>
+
         <Section>
           <Services services={services} id="services" />
         </Section>
@@ -112,9 +115,21 @@ const Prices: NextPage = () => {
   );
 };
 
-const StyledIntroSection = styled(Section)`
+const StyledProcessSection = styled(Section)`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 48px;
+`;
+
+const StyledIntroSection = styled.div`
   color: var(--blue);
   margin-top: var(--nav-height);
+  width: 30%;
+  flex-grow: 1;
+  flex-basis: 400px;
+  max-width: 400px;
+
   > picture {
     display: block;
     max-width: 60%;
@@ -134,8 +149,10 @@ const StyledIntroSection = styled(Section)`
   }
 `;
 
-const StyledCardSection = styled(Section)`
+const StyledCardSection = styled.div`
   padding: 0 24px 72px 24px;
+  flex-grow: 1;
+  flex-basis: 320px;
 
   .process-wrapper {
     display: flex;

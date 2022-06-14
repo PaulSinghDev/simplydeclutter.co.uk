@@ -141,6 +141,7 @@ const StyledSlider = styled.div`
     position: relative;
 
     .slide__item {
+      padding: 14px;
       text-align: center;
       flex-basis: 100%;
       width: 100%;
