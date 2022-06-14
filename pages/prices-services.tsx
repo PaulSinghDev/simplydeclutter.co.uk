@@ -5,13 +5,11 @@ import { pages, siteInfo, navLinks } from "data";
 import styled from "styled-components";
 import { useEffect, useRef } from "react";
 import { services } from "data";
+
 const Prices: NextPage = () => {
   const { pathname } = useRouter();
   const wrapper = useRef<any>();
   const slides = useRef<any>([]);
-  const buttons = useRef<any>([]);
-  const buttonWrapper = useRef<any>();
-
   useEffect(() => {
     // Set the height on the wrapper
     if (slides.current?.length > 0 && !!wrapper?.current) {
@@ -38,7 +36,10 @@ const Prices: NextPage = () => {
       <main>
         <StyledProcessSection>
           <StyledIntroSection>
-            <h1>Pricing & Services</h1>
+            <StyledImageSection>
+              <img src="/assets/images/photos/stock-photo-house.jpeg" />
+            </StyledImageSection>
+            <h1>Declutter Your Home in Three Simple Steps</h1>
             <p>
               If you feel overwhelmed or find it hard to relax, if you are
               stressed out by your disorganised home or are struggling to let go
@@ -107,24 +108,51 @@ const Prices: NextPage = () => {
         </StyledProcessSection>
 
         <Section>
-          <Services services={services} id="services" />
+          <Services services={services} id="services" showButton={false} />
         </Section>
       </main>
       <Footer />
     </div>
   );
 };
-
 const StyledProcessSection = styled(Section)`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 48px;
+  margin-top: calc(var(--nav-height) + 24px);
+`;
+
+const StyledImageSection = styled.div`
+  border-radius: 24px 24px 0 0;
+  overflow: hidden;
+  position: relative;
+  max-height: 200px;
+  max-width: 700px;
+  flex-basis: 100%;
+  margin: auto;
+
+  &::before {
+    width: 100%;
+    height: 150px;
+    content: "";
+    background-image: linear-gradient(
+      transparent 25%,
+      var(--off-white-pink) 90%
+    );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: 50% -48px;
+  }
 `;
 
 const StyledIntroSection = styled.div`
   color: var(--blue);
-  margin-top: var(--nav-height);
   width: 30%;
   flex-grow: 1;
   flex-basis: 400px;
@@ -150,7 +178,7 @@ const StyledIntroSection = styled.div`
 `;
 
 const StyledCardSection = styled.div`
-  padding: 0 24px 72px 24px;
+  padding: 0 auto 72px auto;
   flex-grow: 1;
   flex-basis: 320px;
 
