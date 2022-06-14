@@ -6,8 +6,13 @@ import { Link } from "components/Link";
 
 interface ServicesProps extends HTMLAttributes<HTMLDivElement> {
   services: ServiceInterface[];
+  showButton: boolean;
 }
-const Services: React.FC<ServicesProps> = ({ services, ...rest }) => {
+const Services: React.FC<ServicesProps> = ({
+  showButton = false,
+  services,
+  ...rest
+}) => {
   return (
     <StyledServices {...rest}>
       <h2>My Services</h2>
@@ -29,11 +34,17 @@ const Services: React.FC<ServicesProps> = ({ services, ...rest }) => {
           </li>
         ))}
       </ul>
-      <div className="services__footer">
-        <Link url="/services" title="Go to our services page" asButton={true}>
-          View all
-        </Link>
-      </div>
+      {!!showButton ? (
+        <div className="services__footer">
+          <Link
+            url="/prices-services#services"
+            title="Go to our services page"
+            asButton={true}
+          >
+            View all
+          </Link>
+        </div>
+      ) : null}
     </StyledServices>
   );
 };
@@ -50,6 +61,7 @@ const StyledServices = styled.div`
   > h2 {
     color: var(--purple);
     text-align: center;
+    font-size: 2rem;
   }
 
   .services__list {
@@ -75,13 +87,13 @@ const StyledServices = styled.div`
       .service__item-icon {
         width: calc(30% - 8px);
         margin-right: 8px;
-        background-color: var(--blue);
+
         padding: 8px;
         border-radius: 14px;
         max-width: 75px;
 
         svg {
-          color: #fff;
+          color: var(--purple);
           width: 100%;
           height: auto;
         }
@@ -91,7 +103,7 @@ const StyledServices = styled.div`
         width: calc(70% - 8px);
         margin-left: 8px;
         flex-grow: 1;
-        color: var(--blue);
+        color: var(--purple);
 
         h3 {
           margin: 0;
