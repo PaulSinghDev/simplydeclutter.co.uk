@@ -46,7 +46,7 @@ export const Global = createGlobalStyle`
     }
 
     main {
-        max-width: 1024px;
+        max-width: 900px;
         margin: auto;
     }
 
