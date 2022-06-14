@@ -1,5 +1,4 @@
-import { Link } from "components";
-import { Button } from "components/Button";
+import { Link, Button } from "components";
 import {
   HTMLAttributes,
   MouseEventHandler,
@@ -48,6 +47,14 @@ const Nav: React.FC<NavProps> = ({ links, ...rest }) => {
 
   return (
     <StyledNav ref={nav} {...rest}>
+      <div className="nav-logo">
+        <Link url="/" title="Back to home page">
+          <img
+            src="/assets/images/logos/full-logo-purple-300.png"
+            width="150"
+          />
+        </Link>
+      </div>
       <div className="nav-buttons">
         <Button
           className="burger-menu"
@@ -170,6 +177,17 @@ const StyledNav = styled.nav`
     }
   }
 
+  .nav-logo {
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
   .nav-buttons {
     margin-left: auto;
 

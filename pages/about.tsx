@@ -77,7 +77,8 @@ const StyledSection = styled(Section)`
   margin-top: var(--nav-height);
   > picture {
     display: block;
-    max-width: 60%;
+    max-width: 200px;
+    width: 60%;
     margin: auto;
 
     > img {

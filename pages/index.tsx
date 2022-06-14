@@ -24,14 +24,18 @@ const HomeWhyMeSection: React.FC<HomeWhyMeSectionProps> = ({ ...rest }) => {
       <h2>Why Choose Me</h2>
       <div className="home-why-me-cards">
         <Card
-          background={"var(--blue)"}
+          background={"var(--off-white)"}
+          text={{ color: "var(--purple)" }}
+          shadow={true}
           title="Free Consultation"
           content={[
             "If you are ready to declutter and regain  control of your living space we can arrange a free 1 to 1 Zoom consultation right away!",
           ]}
         ></Card>
         <Card
-          background={"var(--blue)"}
+          background={"var(--off-white)"}
+          text={{ color: "var(--purple)" }}
+          shadow={true}
           title="Fair Pricing"
           content={[
             "Pricing starts at £35 per hour with a minimum of 3 hours per job.",
@@ -56,6 +60,7 @@ const StyledHomeWhyMeSection = styled.div`
 
   > h2 {
     color: var(--purple);
+  font-size: 2rem;
   }
 
   > .home-why-me-cards {
@@ -120,7 +125,10 @@ const Home: NextPage = () => {
           <Testimonials testimonials={testimonials} />
         </Section>
         <Section>
-          <Services services={services} />
+          <Services
+            services={services.filter((_s, i) => i < 4)}
+            showButton={true}
+          />
         </Section>
         <Section>
           <HomeWhyMeSection />
