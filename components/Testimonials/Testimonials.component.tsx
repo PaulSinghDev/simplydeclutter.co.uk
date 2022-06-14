@@ -45,7 +45,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({
 };
 
 const StyledTestimonials = styled(Slider)`
-  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
