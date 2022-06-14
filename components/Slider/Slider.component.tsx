@@ -44,7 +44,7 @@ const Slider: React.FC<SliderProps> = ({ slides, ...rest }) => {
         }
         return output;
       }, 0);
-      _wrapper.current.style.height = `${height}px`;
+      _wrapper.current.style.height = `${height + 24}px`;
     }
   });
 
@@ -121,7 +121,6 @@ const Slider: React.FC<SliderProps> = ({ slides, ...rest }) => {
 };
 
 const StyledSlider = styled.div`
-  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
