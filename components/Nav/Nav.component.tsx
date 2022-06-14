@@ -106,7 +106,7 @@ const StyledNav = styled.nav`
   right: 0;
   background-color: var(--off-white-pink);
   padding: 12px;
-  z-index: 1;
+  z-index: 11;
   .nav-links {
     width: 100%;
     height: 100%;
