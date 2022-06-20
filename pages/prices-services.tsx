@@ -136,7 +136,7 @@ const StyledImageSection = styled.div`
     height: 150px;
     content: "";
     background-image: linear-gradient(
-      transparent 25%,
+      transparent 55%,
       var(--off-white-pink) 90%
     );
     position: absolute;
@@ -172,7 +172,7 @@ const StyledIntroSection = styled.div`
 
   > h1 {
     text-align: center;
-    margin: 2rem 0;
+    margin: 0 0 2rem 0;
     font-size: 2rem;
   }
 `;

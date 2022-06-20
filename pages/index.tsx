@@ -103,7 +103,7 @@ const Home: NextPage = () => {
         <h1>
           Regain control <br /> of your living space
         </h1>
-        <Button>Read More</Button>
+        <Link url="/prices-services" title="View my services" asButton={true}>Read More</Link>
       </Header>
       <main>
         <Section className="image-with-text">
@@ -118,7 +118,7 @@ const Home: NextPage = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <Button>Read About Me</Button>
+            <Link url="/about" title="Read about me" asButton={true}>Read About Me</Link>
           </div>
         </Section>
         <Section>
