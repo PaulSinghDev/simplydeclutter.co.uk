@@ -58,7 +58,6 @@ const Footer: React.FC<FooterProps> = (props) => {
           </li>
         </ul>
       </div>
-      <div className="footer-column"></div>
     </StyledFooter>
   );
 };
@@ -82,7 +81,7 @@ const StyledFooter = styled.div`
   }
 
   .footer-column {
-    width: 25%;
+    width: 33%;
     flex-grow: 1;
     min-width: 250px;
     padding: 24px;
