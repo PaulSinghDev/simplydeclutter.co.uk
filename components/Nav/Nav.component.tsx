@@ -211,19 +211,27 @@ const StyledNav = styled.nav`
 
   @media screen and (min-width: 600px) {
     top: 0;
+    align-items: center;
+
+    .nav-logo {
+      z-index: 15;
+      padding-left: 12px;
+    }
 
     .nav-links {
       width: auto;
       height: auto;
       bottom: unset;
-      width: 100%;
+      flex-grow: 1;
       background: transparent;
       top: 0;
+      position: static;
 
       ul {
         flex-direction: row;
         position: static;
         width: 100%;
+        padding: 12px;
         background: var(--off-white-pink);
         justify-content: flex-end;
       }
