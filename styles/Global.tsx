@@ -29,6 +29,10 @@ export const Global = createGlobalStyle`
         font-family: Roboto;
     }
     
+    html {
+        scroll-behavior: smooth;
+    }
+
     h1 {
         color: var(--blue);
     }

@@ -16,73 +16,6 @@ import { Testimonials } from "components/Testimonials";
 import { HTMLAttributes } from "react";
 import styled from "styled-components";
 
-interface HomeWhyMeSectionProps extends HTMLAttributes<HTMLDivElement> {}
-
-const HomeWhyMeSection: React.FC<HomeWhyMeSectionProps> = ({ ...rest }) => {
-  return (
-    <StyledHomeWhyMeSection {...rest}>
-      <h2>Why Choose Me</h2>
-      <div className="home-why-me-cards">
-        <Card
-          background={"var(--off-white)"}
-          text={{ color: "var(--purple)" }}
-          shadow={true}
-          title="Free Consultation"
-          content={[
-            "If you are ready to declutter and regain  control of your living space we can arrange a free 1 to 1 Zoom consultation right away!",
-          ]}
-        ></Card>
-        <Card
-          background={"var(--off-white)"}
-          text={{ color: "var(--purple)" }}
-          shadow={true}
-          title="Fair Pricing"
-          content={[
-            "Pricing starts at £35 per hour with a minimum of 3 hours per job.",
-          ]}
-        ></Card>
-      </div>
-      <Link url="/prices-services#prices" asButton={true}>
-        View Pricing
-      </Link>
-    </StyledHomeWhyMeSection>
-  );
-};
-
-const StyledHomeWhyMeSection = styled.div`
-  max-width: 900px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: auto;
-
-  > h2 {
-    color: var(--purple);
-  font-size: 2rem;
-  }
-
-  > .home-why-me-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-
-    > div {
-      max-width: 300px;
-      min-width: 250px;
-    }
-  }
-
-  > a {
-    margin-top 24px;
-    display: inline-block;
-    background-color: var(--purple);
-    font-weight: bold;
-  }
-`;
-
 const Home: NextPage = () => {
   const { pathname } = useRouter();
 
@@ -103,7 +36,7 @@ const Home: NextPage = () => {
         <h1>
           Regain control <br /> of your living space
         </h1>
-        <Button>Read More</Button>
+        <Link url="/prices-services" title="View my services" asButton={true}>Read More</Link>
       </Header>
       <main>
         <Section className="image-with-text">
@@ -118,7 +51,7 @@ const Home: NextPage = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <Button>Read About Me</Button>
+            <Link url="/about" title="Read about me" asButton={true}>Read About Me</Link>
           </div>
         </Section>
         <Section>
@@ -129,9 +62,6 @@ const Home: NextPage = () => {
             services={services.filter((_s, i) => i < 4)}
             showButton={true}
           />
-        </Section>
-        <Section>
-          <HomeWhyMeSection />
         </Section>
       </main>
       <Footer />

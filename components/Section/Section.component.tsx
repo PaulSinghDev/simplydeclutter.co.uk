@@ -46,10 +46,15 @@ const StyledSection = styled.section`
       max-width: 400px;
       margin: 24px;
 
-      button {
+      a {
+        display: inline-block;
         margin: 24px 0;
       }
     }
+
+    @media screen and (min-width: 920px) {
+      padding: 0;
+    }; 
   }
 `;
 
