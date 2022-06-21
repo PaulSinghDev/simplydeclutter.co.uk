@@ -58,10 +58,18 @@ const About: NextPage = () => {
             decide where to take items you no longer want.
           </p>
           <div className="button-row">
-            <Link asButton={true} url="/services">
+            <Link
+              asButton={true}
+              url="/prices-services#services"
+              title="View my services"
+            >
               Services
             </Link>
-            <Link asButton={true} url="/pricing">
+            <Link
+              asButton={true}
+              url="/prices-services#prices"
+              title="View my prices"
+            >
               Pricing
             </Link>
           </div>
@@ -95,7 +103,7 @@ const StyledSection = styled(Section)`
   }
 
   .button-row {
-    margin: 4rem auto 0;
+    margin: 4rem auto 4rem auto;
     text-align: center;
   }
 `;
