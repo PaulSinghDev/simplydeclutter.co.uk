@@ -110,6 +110,33 @@ const Prices: NextPage = () => {
         <Section>
           <Services services={services} id="services" showButton={false} />
         </Section>
+        <StyledPricesSection id="prices">
+          <h2>My Prices</h2>
+          <p>
+            In order to keep my pricing as fair as possible I charge a flat fee
+            of just <strong>£35 per hour</strong> for all my clients and do not
+            add on any hidden fees.
+          </p>
+          <p>
+            If you live more than 10 miles from <strong>ADDRESS</strong> I will
+            need to charge an <strong>additional £10 per mile</strong> in order
+            to account for my travel time and costs.
+          </p>
+          <strong>A full breakdown is below:</strong>
+          <div className="price-list">
+            <ul>
+              <li>Consultation Fee: £0</li>
+              <li>Hourly Rate: £35</li>
+              <li>
+                Price Per Mile: £10
+                <div className="disclaimer">
+                  Not applicable to houses less than 10 miles from ADDRESS
+                </div>
+              </li>
+              <li>Minimum Callout: 3 hours</li>
+            </ul>
+          </div>
+        </StyledPricesSection>
       </main>
       <Footer />
     </div>
@@ -203,6 +230,23 @@ const StyledCardSection = styled.div`
     .process-nav {
       margin: 72px 0 0;
       align-self: Center;
+    }
+  }
+`;
+
+const StyledPricesSection = styled(Section)`
+  color: var(--purple);
+
+  .price-list {
+    li {
+      margin: 8px 0;
+    }
+
+    .disclaimer {
+      > sup {
+        margin-right: 8px;
+      }
+      font-size: 0.75rem;
     }
   }
 `;
