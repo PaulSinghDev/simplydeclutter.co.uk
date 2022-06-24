@@ -118,9 +118,9 @@ const Prices: NextPage = () => {
             add on any hidden fees.
           </p>
           <p>
-            If you live more than 10 miles from <strong>ADDRESS</strong> I will
-            need to charge an <strong>additional £10 per mile</strong> in order
-            to account for my travel time and costs.
+            If you live more than 10 miles or 15 minutes by car I will need to
+            charge an <strong>additional £30 per hour</strong> of travel time.
+            This will be charged in 15 minute increments.
           </p>
           <strong>A full breakdown is below:</strong>
           <div className="price-list">
@@ -128,12 +128,17 @@ const Prices: NextPage = () => {
               <li>Consultation Fee: £0</li>
               <li>Hourly Rate: £35</li>
               <li>
-                Price Per Mile: £10
+                Travel fee £30 per hour
                 <div className="disclaimer">
-                  Not applicable to houses less than 10 miles from ADDRESS
+                  Travel fee only applies to people more than 15 minutes by car
+                  or 10 miles away
                 </div>
               </li>
               <li>Minimum Callout: 3 hours</li>
+              <li>
+                Payment must be paid at the end of each session in cash, by card
+                or by bank transfer.
+              </li>
             </ul>
           </div>
         </StyledPricesSection>

@@ -2,17 +2,25 @@ import { TestimonialInterface } from "types";
 
 const testimonials: TestimonialInterface[] = [
   {
-    author: "H. Someone",
+    author: "Harriet Allen",
     comment:
-      "This is my review which has a really long line and should wrap down.",
-    platform: "Tripadvisor",
-    url: "https://tripadvisor.com/",
+      "Hilary has done wonders at organising my house she is phenomenal no task to small thank you",
+    platform: "Whatsapp",
+    url: "https://simplydeclutter.co.uk",
   },
   {
-    author: "H. Someone Else",
-    comment: "This is my other review",
-    platform: "Facebook",
-    url: "https://facebook.com/",
+    author: "Sandra",
+    comment:
+      "Hilary is a pocket Rocket who will transform your space and life ",
+    platform: "Whatsapp",
+    url: "https://simplydeclutter.co.uk",
+  },
+  {
+    author: "Judith",
+    comment:
+      "Hilary guided and advised me as to how to sort items into those that needed to be binned or taken to a charity shop",
+    platform: "Whatsapp",
+    url: "https://simplydeclutter.co.uk",
   },
 ];
 

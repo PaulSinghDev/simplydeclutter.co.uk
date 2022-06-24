@@ -38,26 +38,6 @@ const Footer: React.FC<FooterProps> = (props) => {
           </li>
         </ul>
       </div>
-      <div className="footer-column">
-        <h4>Legal Information</h4>
-        <ul>
-          <li>
-            <Link url="/privacy-policy" title="Go to privacy policy">
-              Privacy Policy
-            </Link>
-          </li>
-          <li>
-            <Link url="/terms-of-use" title="Go to terms of use">
-              Terms of Use
-            </Link>
-          </li>
-          <li>
-            <Link url="/terms-of-service" title="Go to terms of service">
-              Terms of Service
-            </Link>
-          </li>
-        </ul>
-      </div>
     </StyledFooter>
   );
 };

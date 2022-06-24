@@ -1,14 +1,15 @@
 import { Form } from "components/Form/Form.component";
 import { render, screen } from "utils";
 import { fireEvent } from "@testing-library/react";
+import { Input } from "components";
 
 const CHILD_IDS = ["child1", "child2"];
 const TEST_ID = "Form";
 const ON_SUBMIT = jest.fn();
 const FORM_COMPONENT = (
   <Form data-testid={TEST_ID} submitHandler={ON_SUBMIT}>
-    <span data-testid={CHILD_IDS[0]}></span>
-    <span data-testid={CHILD_IDS[1]}></span>
+    <Input type="text" initialValue={""} data-testid={CHILD_IDS[0]}></Input>
+    <Input type="text" initialValue={""} data-testid={CHILD_IDS[1]}></Input>
   </Form>
 );
 

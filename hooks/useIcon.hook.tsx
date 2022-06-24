@@ -3,6 +3,7 @@ import { GiShirt, GiPapers, GiHastyGrave } from "react-icons/gi";
 import { RiArchiveDrawerLine } from "react-icons/ri";
 import { ImShrink2 } from "react-icons/im";
 import { FaBaby, FaBoxOpen } from "react-icons/fa";
+import { RiEmotionSadLine } from "react-icons/ri";
 import { Icons } from "types";
 
 const useIcon = (icon: Icons) => {
@@ -11,6 +12,8 @@ const useIcon = (icon: Icons) => {
       return <GiShirt />;
     case "iron":
       return <MdIron />;
+    case "sad":
+      return <RiEmotionSadLine />;
     case "drawer":
       return <RiArchiveDrawerLine />;
     case "shrink":
