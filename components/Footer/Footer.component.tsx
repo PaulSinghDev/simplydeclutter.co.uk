@@ -27,18 +27,12 @@ const Footer: React.FC<FooterProps> = (props) => {
             </Link>
           </li>
           <li>
-            <Link
-              url="/http://localhost:3000/prices-services#services"
-              title="Go to services page"
-            >
+            <Link url="/prices-services#services" title="Go to services page">
               Services
             </Link>
           </li>
           <li>
-            <Link
-              url="/http://localhost:3000/prices-services#prices"
-              title="Go to prices page"
-            >
+            <Link url="/prices-services#prices" title="Go to prices page">
               Prices
             </Link>
           </li>
