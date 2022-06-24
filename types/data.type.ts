@@ -33,6 +33,7 @@ export interface ServiceInterface {
 
 export type Icons =
   | "shirt"
+  | "sad"
   | "iron"
   | "drawer"
   | "shrink"

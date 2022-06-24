@@ -17,13 +17,9 @@ const Testimonial: React.FC<TestimonialInterface> = ({
     <blockquote>
       <p>{comment}</p>
       <footer>
-        <a
-          href={url}
-          title={`Read more about ${author}'s comment on ${platform}`}
-        >
-          Read more
-        </a>
-        <cite>{author}</cite>
+        <cite>
+          {author} - {platform}
+        </cite>
       </footer>
     </blockquote>
   );

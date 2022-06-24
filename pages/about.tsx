@@ -20,7 +20,10 @@ const About: NextPage = () => {
       <main>
         <StyledSection>
           <picture>
-            <img src="/assets/images/photos/stock-photo-lady.jpeg" />
+            <img
+              src="/assets/images/photos/hilary.jpg"
+              alt="Hilary leaning on a wall"
+            />
           </picture>
           <h1>About Me</h1>
           <p>
@@ -85,7 +88,7 @@ const StyledSection = styled(Section)`
   margin-top: var(--nav-height);
   > picture {
     display: block;
-    max-width: 200px;
+    max-width: 400px;
     width: 60%;
     margin: auto;
 

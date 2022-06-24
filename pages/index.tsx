@@ -36,7 +36,9 @@ const Home: NextPage = () => {
         <h1>
           Regain control <br /> of your living space
         </h1>
-        <Link url="/prices-services" title="View my services" asButton={true}>Read More</Link>
+        <Link url="/prices-services" title="View my services" asButton={true}>
+          Read More
+        </Link>
       </Header>
       <main>
         <Section className="image-with-text">
@@ -48,10 +50,14 @@ const Home: NextPage = () => {
           <div className="text">
             <h2>Professionally Declutter and Organise Your Home with Hilary</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              If you feel overwhelmed or find it hard to relax, if you are
+              stressed out by your disorganised home or are struggling to let go
+              of things you no longer need I can help you to regain control and
+              create a calm, more organised home.
             </p>
-            <Link url="/about" title="Read about me" asButton={true}>Read About Me</Link>
+            <Link url="/about" title="Read about me" asButton={true}>
+              Read About Me
+            </Link>
           </div>
         </Section>
         <Section>

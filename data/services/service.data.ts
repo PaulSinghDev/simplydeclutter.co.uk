@@ -28,7 +28,7 @@ const services: ServiceInterface[] = [
   {
     title: "Bereavement",
     description: "Sorting out then possessions of a loved whom has passed away",
-    icon: "grave",
+    icon: "sad",
   },
   {
     title: "Paperwork and Documents",
