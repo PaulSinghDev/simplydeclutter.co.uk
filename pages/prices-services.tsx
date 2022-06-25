@@ -26,8 +26,8 @@ const Prices: NextPage = () => {
   return (
     <div>
       <Meta
-        title={pages.prices.title}
-        description={pages.prices.description}
+        title={pages.pricesServices.title}
+        description={pages.pricesServices.description}
         url={`${siteInfo.url}${pathname}`}
         siteName={siteInfo.siteName}
         favicon={siteInfo.favicon}

@@ -27,13 +27,8 @@ const Footer: React.FC<FooterProps> = (props) => {
             </Link>
           </li>
           <li>
-            <Link url="/prices-services#services" title="Go to services page">
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link url="/prices-services#prices" title="Go to prices page">
-              Prices
+            <Link url="/prices-services" title="Go to prices & services page">
+              Prices & Services
             </Link>
           </li>
         </ul>

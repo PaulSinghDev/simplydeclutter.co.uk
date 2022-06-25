@@ -1,5 +1,5 @@
 import prices from "./prices.data";
-import services from "./services.data";
+import pricesServices from "./prices-services.data";
 import index from "./index.data";
 import about from "./about.data";
 import contact from "./contact.data";
@@ -9,7 +9,7 @@ import termsOfService from "./termsOfService.data";
 
 export {
   prices,
-  services,
+  pricesServices,
   index,
   about,
   contact,
