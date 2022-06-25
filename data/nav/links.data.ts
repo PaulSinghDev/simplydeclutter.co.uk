@@ -2,15 +2,9 @@ import { NavLinkInterface } from "components";
 
 const navLinks: NavLinkInterface[] = [
   {
-    title: "Prices",
-    label: "Prices",
-    url: "/prices-services#prices",
-    isExternal: false,
-  },
-  {
-    title: "Services",
-    label: "Services",
-    url: "/prices-services#services",
+    title: "Prices & Services",
+    label: "Prices & Services",
+    url: "/prices-services",
     isExternal: false,
   },
   {

@@ -1,20 +1,8 @@
 import type { NextPage } from "next";
-import {
-  Card,
-  Button,
-  Footer,
-  Header,
-  Meta,
-  Nav,
-  Section,
-  Services,
-  Link,
-} from "components";
+import { Footer, Header, Meta, Nav, Section, Services, Link } from "components";
 import { useRouter } from "next/router";
 import { pages, siteInfo, navLinks, testimonials, services } from "data";
 import { Testimonials } from "components/Testimonials";
-import { HTMLAttributes } from "react";
-import styled from "styled-components";
 
 const Home: NextPage = () => {
   const { pathname } = useRouter();
