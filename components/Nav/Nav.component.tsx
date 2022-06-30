@@ -50,8 +50,8 @@ const Nav: React.FC<NavProps> = ({ links, ...rest }) => {
       <div className="nav-logo">
         <Link url="/" title="Back to home page">
           <img
-            src="/assets/images/logos/full-logo-purple-300.png"
-            width="150"
+            src="/assets/images/logos/short-logo-purple-150.png"
+            width="30"
           />
         </Link>
       </div>
@@ -114,6 +114,7 @@ const StyledNav = styled.nav`
   background-color: var(--off-white-pink);
   padding: 12px;
   z-index: 11;
+
   .nav-links {
     width: 100%;
     height: 100%;
@@ -178,6 +179,9 @@ const StyledNav = styled.nav`
   }
 
   .nav-logo {
+    max-height: 75px;
+    align-self: center;
+
     a {
       display: flex;
       justify-content: center;
@@ -190,6 +194,7 @@ const StyledNav = styled.nav`
   }
   .nav-buttons {
     margin-left: auto;
+    align-self: center;
 
     button {
       padding: 4px;

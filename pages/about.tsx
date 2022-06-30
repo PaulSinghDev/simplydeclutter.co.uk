@@ -27,7 +27,7 @@ const About: NextPage = () => {
           </picture>
           <h1>About Me</h1>
           <p>
-            My name is Hilary and I love helping people to Declutter and
+            My name is Hilary and I love helping people to declutter and
             organise their life spaces.
           </p>
           <p>
@@ -55,10 +55,10 @@ const About: NextPage = () => {
             decluttering and organising.
           </p>
           <p>
-            I will help, not judge I will declutter at your pace I will respect
-            your things and your decisions I will make the process of
-            decluttering and organising a positive experience. I will help you
-            decide where to take items you no longer want.
+            I will help not judge. I will declutter at your pace and will
+            respect your things and decisions. I will make the process of
+            decluttering and organising a positive experience and will help you
+            decide where to take or dispose of items you no longer want.
           </p>
           <div className="button-row">
             <Link
