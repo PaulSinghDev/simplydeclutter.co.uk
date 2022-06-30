@@ -34,11 +34,11 @@ const Meta: React.FC<MetaProps> = ({
       <meta name="twitter:card" content="summary" />
       <meta
         property="og:image"
-        content="https://simplydeclutter.co.uk/public/assets/images/logos/social-share-card.jpeg"
+        content="https://simplydeclutter.co.uk/assets/images/logos/social-share-card.jpeg"
       />
       <meta
         name="twitter:image"
-        content="https://simplydeclutter.co.uk/public/assets/images/logos/social-share-card.jpeg"
+        content="https://simplydeclutter.co.uk/assets/images/logos/social-share-card.jpeg"
       />
     </Head>
   );
