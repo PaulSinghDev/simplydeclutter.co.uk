@@ -4,7 +4,7 @@ const testimonials: TestimonialInterface[] = [
   {
     author: "Harriet Allen",
     comment:
-      "Hilary has done wonders at organising my house she is phenomenal no task to small thank you",
+      "Hilary has done wonders at organising my house she is phenomenal no task too small thank you",
     platform: "Whatsapp",
     url: "https://simplydeclutter.co.uk",
   },
