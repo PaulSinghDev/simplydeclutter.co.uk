@@ -38,10 +38,10 @@ const Home: NextPage = () => {
           <div className="text">
             <h2>Professionally Declutter and Organise Your Home with Hilary</h2>
             <p>
-              If you feel overwhelmed or find it hard to relax, if you are
-              stressed out by your disorganised home or are struggling to let go
-              of things you no longer need I can help you to regain control and
-              create a calm, more organised home.
+              If you feel overwhelmed or find it hard to relax. If you are
+              stressed out by your disorganised home, or are struggling to let
+              go of things you no longer need, I can help you to regain control
+              and create a calm, more organised home.
             </p>
             <Link url="/about" title="Read about me" asButton={true}>
               Read About Me

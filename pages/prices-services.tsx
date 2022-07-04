@@ -126,13 +126,6 @@ const Prices: NextPage = () => {
             <ul>
               <li>Consultation Fee: £0</li>
               <li>Hourly Rate: £35</li>
-              <li>
-                Travel fee £30 per hour
-                <div className="disclaimer">
-                  Travel fee only applies to people more than 30 minutes by car
-                  or 15 miles away from Burford
-                </div>
-              </li>
               <li>Minimum Session: 2 hours</li>
               <li>
                 Payment must be paid at the end of each session in cash, by card

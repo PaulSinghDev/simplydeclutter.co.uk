@@ -31,15 +31,15 @@ const About: NextPage = () => {
             organise their life spaces.
           </p>
           <p>
-            Whether it is your whole house or just one particular area I can
+            Whether it is your whole house, or just one particular area, I can
             help you free up space and organise your belongings to give you a
             space you feel happy to be in.
           </p>
           <p>
             I like to get to know my clients and work with them to organise
             their homes to suit their lifestyle. Our first meeting can be by
-            telephone, Facetime or a zoom call just to have a chat about what
-            you are hoping to achieve.
+            telephone, FaceTime or a Zoom call to have a chat about what you are
+            hoping to achieve.
           </p>
           <p>
             My aim is to help you get organised and declutter without added
@@ -47,7 +47,7 @@ const About: NextPage = () => {
           </p>
           <p>
             I appreciate that you may be apprehensive about inviting someone
-            into your home and laying open your life however I am on your side
+            into your home and laying open your life, however, I am on your side
             and I want to help.
           </p>
           <p>
