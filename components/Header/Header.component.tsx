@@ -38,12 +38,6 @@ const StyledHeader = styled.header<{ fullHeight?: boolean }>`
             max-width: 400px;
             width: 80%;
         }
-        
-        img {
-            max-width: calc(100% - 24px);
-            margin: auto;
-            width: 400px;
-        }
 
         button {
             margin-top: 2rem;

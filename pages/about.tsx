@@ -92,7 +92,7 @@ const StyledSection = styled(Section)`
   margin-top: calc(var(--nav-height) + 2rem);
   > picture {
     display: block;
-    max-width: 400px;
+    max-width: 80%;
     width: 60%;
     margin: auto;
     width: 500px;

@@ -38,7 +38,12 @@ const Home: NextPage = () => {
         <Section className="image-with-text">
           <div className="image">
             <picture>
-              <img src="/assets/images/examples/bathroom-flower-basket.jpg" />
+              <Image
+                src="/assets/images/examples/bathroom-flower-basket.jpg"
+                width={400}
+                height={315}
+                layout="responsive"
+              />
             </picture>
           </div>
           <div className="text">
