@@ -13,8 +13,6 @@ interface FormProps extends HTMLAttributes<HTMLFormElement> {
   submitHandler: FormEventHandler;
 }
 
-type Subjects = "Contact" | "Quote" | "Feedback" | "Other";
-
 const Form: React.FC<FormProps> = ({ submitHandler, ...rest }) => {
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -232,6 +230,7 @@ const StyledForm = styled.form`
   align-items: center;
   padding: 0 2rem 6rem 2rem;
   position: relative;
+  margin: auto;
 
   > span {
     position: absolute;
