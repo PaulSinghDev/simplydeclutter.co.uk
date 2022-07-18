@@ -19,7 +19,7 @@ const Home: NextPage = () => {
       <Nav links={navLinks} />
       <Header fullHeight={true}>
         <picture>
-          <img src="/assets/images/logos/full-logo-blue-700.svg" />
+          <img src="/assets/images/logos/full-logo-blue-500.svg" />
         </picture>
         <h1>
           Regain control <br /> of your living space
