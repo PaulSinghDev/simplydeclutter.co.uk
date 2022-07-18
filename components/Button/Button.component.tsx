@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   buttonStyle?: "primary" | "secondary" | "tertiary" | "transparent";
+  type?: "button" | "submit";
 }
 
 const Button: React.FC<ButtonProps> = ({
