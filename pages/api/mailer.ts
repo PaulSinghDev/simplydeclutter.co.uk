@@ -23,30 +23,43 @@ const validateField = (value: string, field: string): boolean => {
   }
 };
 
-const message = {
-  from: `Contact From (simplydeclutter.co.uk) <${process.env.MAILER_USER}>`,
-  to: process.env.MAILER_RECEIVER,
-  replyTo: "",
-  subject: "",
-  text: "",
-  html: "",
-};
-
-const transport = nodemailer.createTransport({
-  host: process.env.MAILER_HOST,
-  port: Number(process.env.MAILER_PORT),
-  secure: true,
-  auth: {
-    user: process.env.MAILER_USER,
-    pass: process.env.MAILER_PASS,
-  },
-} as SMTPTransport.Options);
-
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  const message = {
+    from: `Contact From (simplydeclutter.co.uk) <${process.env.MAILER_USER}>`,
+    to: process.env.MAILER_RECEIVER,
+    replyTo: "",
+    subject: "",
+    text: "",
+    html: "",
+  };
+
   try {
+    const transport = nodemailer.createTransport({
+      host: process.env.MAILER_HOST,
+      port: Number(process.env.MAILER_PORT),
+      secure: true,
+      auth: {
+        user: process.env.MAILER_USER,
+        pass: process.env.MAILER_PASS,
+      },
+    } as SMTPTransport.Options);
+
+    // ensure transport is working
+    await new Promise((resolve, reject) => {
+      transport.verify((err, success) => {
+        if (!!err) {
+          console.log(err);
+          reject(err);
+        } else {
+          console.log("Server ready to send mail");
+          resolve(success);
+        }
+      });
+    });
+
     const errors: ApiError[] = [];
     const body = JSON.parse(req.body);
 
@@ -69,11 +82,18 @@ export default function handler(
       message.html = `<p>${body.content}</p>`;
       message.text = body.content;
       message.subject = body.subject;
-      // Send message
-      transport.sendMail(message, (err, info) => {
-        if (!!err) {
-          throw new Error(err.message);
-        }
+
+      await new Promise((resolve, reject) => {
+        // Send message
+        transport.sendMail(message, (err, info) => {
+          if (!!err) {
+            console.error(err);
+            reject(err);
+          } else {
+            console.log(info);
+            resolve(info);
+          }
+        });
       });
       // Respond to the user
       res.status(200).json({ success: true, message: "Success" });
