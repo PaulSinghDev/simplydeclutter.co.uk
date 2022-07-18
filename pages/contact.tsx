@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Button, Footer, Form, Input, Meta, Nav, Section } from "components";
+import { Footer, Form, Meta, Nav, Section } from "components";
 import { useRouter } from "next/router";
 import { pages, siteInfo, navLinks } from "data";
 import styled from "styled-components";
@@ -45,14 +45,9 @@ const Contact: NextPage = () => {
             <strong>
               Phone: <a href="tel:07738129337"> 07738129337</a>
             </strong>
-            <strong>
-              Email:{" "}
-              <a href="mailto:hilary@simplydeclutter.co.uk">
-                hilary@simplydeclutter.co.uk
-              </a>
-            </strong>
           </div>
         </StyledHeader>
+        <Form submitHandler={(event) => console.log(event)} />
       </main>
       <Footer />
     </div>
@@ -91,10 +86,6 @@ const StyledHeader = styled(Section)`
 
       &:first-of-type {
         margin-top: 4rem;
-        margin-bottom: 1rem;
-      }
-      &:last-of-type {
-        margin-bottom: 4rem;
       }
     }
   }
