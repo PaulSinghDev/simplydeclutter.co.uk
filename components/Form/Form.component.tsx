@@ -128,6 +128,8 @@ const Form: React.FC<FormProps> = ({ submitHandler, ...rest }) => {
     setPhone("");
     setContent("");
     setSubject("0");
+    loaderRef.current?.dataset.active &&
+      (loaderRef.current.dataset.active = "false");
   };
 
   return (
