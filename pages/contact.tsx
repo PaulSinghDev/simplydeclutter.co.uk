@@ -3,16 +3,10 @@ import { Footer, Form, Meta, Nav, Section } from "components";
 import { useRouter } from "next/router";
 import { pages, siteInfo, navLinks } from "data";
 import styled from "styled-components";
-import React, { FormEvent, FormEventHandler } from "react";
+import React from "react";
+import Image from "next/image";
 const Contact: NextPage = () => {
   const { pathname } = useRouter();
-  const handleSubmit: FormEventHandler = (
-    event: FormEvent<HTMLFormElement>
-  ) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    console.log(formData.get(""));
-  };
   return (
     <div>
       <Meta
@@ -26,9 +20,11 @@ const Contact: NextPage = () => {
       <main>
         <StyledHeader>
           <div className="image">
-            <img
+            <Image
               src="/assets/images/photos/stock-photo-phone.jpeg"
-              width="500"
+              width={500}
+              height={300}
+              layout="responsive"
             />
           </div>
           <div className="content">
@@ -63,10 +59,11 @@ const StyledHeader = styled(Section)`
   > .image {
     border-radius: 24px;
     padding: 2rem;
-
-    > img {
+    width: 95%;
+    max-width: 500px;
+    overflow: hidden;
+    > span {
       border-radius: 24px;
-      max-width: 95%;
     }
   }
 

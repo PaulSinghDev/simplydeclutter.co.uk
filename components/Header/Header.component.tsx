@@ -33,9 +33,10 @@ const StyledHeader = styled.header<{ fullHeight?: boolean }>`
             text-align: center;
         }
 
-        picture {
+        .hero-image {
             text-align: center;
-            max-width: 500px;
+            max-width: 400px;
+            width: 80%;
         }
         
         img {

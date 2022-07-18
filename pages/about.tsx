@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import { Footer, Link, Meta, Nav, Section } from "components";
 import { useRouter } from "next/router";
 import { pages, siteInfo, navLinks } from "data";
+import Image from "next/image";
 
 const About: NextPage = () => {
   const { pathname } = useRouter();
@@ -20,7 +21,10 @@ const About: NextPage = () => {
       <main>
         <StyledSection>
           <picture>
-            <img
+            <Image
+              layout="responsive"
+              width={500}
+              height={400}
               src="/assets/images/photos/hilary.jpg"
               alt="Hilary leaning on a wall"
             />
@@ -85,17 +89,17 @@ const About: NextPage = () => {
 
 const StyledSection = styled(Section)`
   color: var(--blue);
-  margin-top: var(--nav-height);
+  margin-top: calc(var(--nav-height) + 2rem);
   > picture {
     display: block;
     max-width: 400px;
     width: 60%;
     margin: auto;
+    width: 500px;
 
-    > img {
-      border-radius: 24px;
-      max-width: 100%;
+    > span {
       height: auto;
+      border-radius: 24px;
     }
   }
 
