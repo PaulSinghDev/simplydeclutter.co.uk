@@ -5,6 +5,7 @@ import { pages, siteInfo, navLinks } from "data";
 import styled from "styled-components";
 import { useEffect, useRef } from "react";
 import { services } from "data";
+import Image from "next/image";
 
 const Prices: NextPage = () => {
   const { pathname } = useRouter();
@@ -37,7 +38,12 @@ const Prices: NextPage = () => {
         <StyledProcessSection>
           <StyledIntroSection>
             <StyledImageSection>
-              <img src="/assets/images/photos/stock-photo-house.jpeg" />
+              <Image
+                layout="responsive"
+                width={400}
+                height={300}
+                src="/assets/images/photos/stock-photo-house.jpeg"
+              />
             </StyledImageSection>
             <h1>Declutter Your Home in Three Simple Steps</h1>
             <p>
@@ -154,6 +160,7 @@ const StyledImageSection = styled.div`
   max-width: 700px;
   flex-basis: 100%;
   margin: auto;
+  width: 100%;
 
   &::before {
     width: 100%;
@@ -166,6 +173,7 @@ const StyledImageSection = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 1;
   }
 
   img {

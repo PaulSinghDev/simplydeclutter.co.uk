@@ -19,12 +19,12 @@ const StyledSection = styled.section`
     background: transparent;
 
     > .image {
-      width: 100%;
-      max-width: 400px;
+      width: 400px;
+      max-width: 100%;
       margin: 14px;
 
       picture {
-        display: inline-flex;
+        display: block;
         overflow: hidden;
         max-width: 100%;
         border-radius: 20px;
@@ -54,7 +54,7 @@ const StyledSection = styled.section`
 
     @media screen and (min-width: 920px) {
       padding: 0;
-    }; 
+    }
   }
 `;
 
