@@ -3,6 +3,7 @@ import { Footer, Header, Meta, Nav, Section, Services, Link } from "components";
 import { useRouter } from "next/router";
 import { pages, siteInfo, navLinks, testimonials, services } from "data";
 import { Testimonials } from "components/Testimonials";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   const { pathname } = useRouter();
@@ -18,9 +19,14 @@ const Home: NextPage = () => {
       />
       <Nav links={navLinks} />
       <Header fullHeight={true}>
-        <picture>
-          <img src="/assets/images/logos/full-logo-blue-500.svg" />
-        </picture>
+        <div className="hero-image">
+          <Image
+            src="/assets/images/logos/full-logo-blue-500.svg"
+            layout="responsive"
+            width={500}
+            height={200}
+          />
+        </div>
         <h1>
           Regain control <br /> of your living space
         </h1>
