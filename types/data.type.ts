@@ -18,6 +18,17 @@ export interface PageData {
   description: string;
 }
 
+export type ApiError = {
+  field: string;
+  value: string;
+};
+
+export type Data = {
+  success: boolean;
+  message: string;
+  errors?: ApiError[];
+};
+
 export interface TestimonialInterface {
   author: string;
   comment: string;
