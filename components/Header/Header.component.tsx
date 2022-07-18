@@ -35,6 +35,7 @@ const StyledHeader = styled.header<{ fullHeight?: boolean }>`
 
         picture {
             text-align: center;
+            max-width: 500px;
         }
         
         img {
