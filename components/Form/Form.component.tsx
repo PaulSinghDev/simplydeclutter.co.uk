@@ -329,6 +329,9 @@ const StyledForm = styled.form`
     font-size: 1rem;
     font-family: inherit;
     margin: 12px 12px 0 12px;
+    appearance: none;
+    background-color: #fff;
+    color: #000;
 
     &[data-error="true"] {
       border-color: tomato;

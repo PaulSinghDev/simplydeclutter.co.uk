@@ -43,6 +43,7 @@ const Prices: NextPage = () => {
                 width={400}
                 height={300}
                 src="/assets/images/photos/stock-photo-house.jpeg"
+                alt="LArge house in the Cotswolds, UK"
               />
             </StyledImageSection>
             <h1>Declutter Your Home in Three Simple Steps</h1>

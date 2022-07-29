@@ -25,6 +25,7 @@ const Home: NextPage = () => {
             layout="responsive"
             width={500}
             height={200}
+            alt="Simply Declutter logo"
           />
         </div>
         <h1>
@@ -43,6 +44,7 @@ const Home: NextPage = () => {
                 width={400}
                 height={315}
                 layout="responsive"
+                alt="Flower basket in a bathroom"
               />
             </picture>
           </div>
