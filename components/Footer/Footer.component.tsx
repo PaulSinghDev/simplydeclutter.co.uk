@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = (props) => {
             src="/assets/images/logos/full-logo-white.png"
             alt="Simply Declutter logo"
             width={200}
-            height={150}
+            height={54}
           />
         </Link>
       </div>
