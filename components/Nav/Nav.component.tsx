@@ -9,6 +9,7 @@ import {
 import styled from "styled-components";
 import { useDeviceSize } from "hooks";
 import { IoMdMenu } from "react-icons/io";
+import Image from "next/image";
 
 export interface NavLinkInterface {
   label: string;
@@ -49,9 +50,11 @@ const Nav: React.FC<NavProps> = ({ links, ...rest }) => {
     <StyledNav ref={nav} {...rest}>
       <div className="nav-logo">
         <Link url="/" title="Back to home page">
-          <img
+          <Image
             src="/assets/images/logos/short-logo-purple-150.png"
-            width="30"
+            width={30}
+            height={30}
+            alt="Simply Declutter icon"
           />
         </Link>
       </div>

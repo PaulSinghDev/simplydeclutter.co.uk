@@ -25,6 +25,8 @@ const Testimonial: React.FC<TestimonialInterface> = ({
   );
 };
 
+Testimonial.displayName = "Testimonial";
+
 const Testimonials: React.FC<TestimonialsProps> = ({
   testimonials,
   ...rest
@@ -32,9 +34,12 @@ const Testimonials: React.FC<TestimonialsProps> = ({
   return (
     <StyledTestimonials
       className="testimonials__wrapper"
-      slides={testimonials.map((testimonial) => () => (
-        <Testimonial {...testimonial} />
-      ))}
+      slides={testimonials.map(
+        (testimonial) =>
+          function () {
+            return <Testimonial {...testimonial} />;
+          }
+      )}
       {...rest}
     />
   );

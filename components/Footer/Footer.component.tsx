@@ -1,4 +1,5 @@
 import { Link } from "components";
+import Image from "next/image";
 import { HTMLAttributes } from "react";
 
 import styled from "styled-components";
@@ -10,7 +11,12 @@ const Footer: React.FC<FooterProps> = (props) => {
     <StyledFooter {...props}>
       <div className="footer-column">
         <Link url="/" title="Go back to the home page" className="footer-logo">
-          <img src="/assets/images/logos/full-logo-white.png" />
+          <Image
+            src="/assets/images/logos/full-logo-white.png"
+            alt="Simply Declutter logo"
+            width={200}
+            height={150}
+          />
         </Link>
       </div>
       <div className="footer-column">

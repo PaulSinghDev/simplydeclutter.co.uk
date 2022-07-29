@@ -5,6 +5,7 @@ import { pages, siteInfo, navLinks } from "data";
 import styled from "styled-components";
 import React from "react";
 import Image from "next/image";
+
 const Contact: NextPage = () => {
   const { pathname } = useRouter();
   return (
@@ -25,6 +26,7 @@ const Contact: NextPage = () => {
               width={500}
               height={300}
               layout="responsive"
+              alt="White iPhone in a person's hand"
             />
           </div>
           <div className="content">
@@ -40,6 +42,12 @@ const Contact: NextPage = () => {
             </p>
             <strong>
               Phone: <a href="tel:07738129337"> 07738129337</a>
+            </strong>
+            <strong>
+              Email:{" "}
+              <a href="mailto:hilary@simplydeclutter.co.uk">
+                hilary@simplydeclutter.co.uk
+              </a>
             </strong>
           </div>
         </StyledHeader>
@@ -83,6 +91,7 @@ const StyledHeader = styled(Section)`
 
       &:first-of-type {
         margin-top: 4rem;
+        margin-bottom: 2rem;
       }
     }
   }

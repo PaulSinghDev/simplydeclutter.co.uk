@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react";
 import styled from "styled-components";
-import { ServiceInterface } from "types";
+import { Icons, ServiceInterface } from "types";
 import { useIcon } from "hooks";
 import { Link } from "components/Link";
 
@@ -13,6 +13,7 @@ const Services: React.FC<ServicesProps> = ({
   services,
   ...rest
 }) => {
+  const Icon = (icon: Icons) => useIcon(icon);
   return (
     <StyledServices {...rest}>
       <h2>My Services</h2>
@@ -24,7 +25,7 @@ const Services: React.FC<ServicesProps> = ({
           >
             <div className="service__item-content">
               <div className="service__item-icon" data-icon={service.icon}>
-                {useIcon(service.icon)}
+                {Icon(service.icon)}
               </div>
               <div className="service__item-details">
                 <h3>{service.title}</h3>

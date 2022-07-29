@@ -1,5 +1,6 @@
 import React, { forwardRef, HTMLAttributes, MouseEventHandler } from "react";
 import styled from "styled-components";
+import Image from "next/image";
 
 interface CtaInterface
   extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
@@ -44,7 +45,9 @@ const Card: React.FC<CardProps> = forwardRef<HTMLDivElement, CardProps>(
   ({ title, content, cta, image, ...rest }, ref) => {
     return (
       <StyledCard ref={ref} {...rest}>
-        {!!image ? <img src={image} /> : null}
+        {!!image ? (
+          <Image src={image} width={200} height={150} alt={title} />
+        ) : null}
         <h3>{title}</h3>
         {content.map((line) => (
           <p key={Math.random().toString(36).substring(2, 7)}>{line}</p>
@@ -54,6 +57,8 @@ const Card: React.FC<CardProps> = forwardRef<HTMLDivElement, CardProps>(
     );
   }
 );
+
+Card.displayName = "Card";
 
 const StyledCard = styled.div<{
   background?: string;
