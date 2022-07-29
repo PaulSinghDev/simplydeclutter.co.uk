@@ -43,12 +43,6 @@ const Contact: NextPage = () => {
             <strong>
               Phone: <a href="tel:07738129337"> 07738129337</a>
             </strong>
-            <strong>
-              Email:{" "}
-              <a href="mailto:hilary@simplydeclutter.co.uk">
-                hilary@simplydeclutter.co.uk
-              </a>
-            </strong>
           </div>
         </StyledHeader>
         <Form submitHandler={(event) => console.log(event)} />
@@ -91,7 +85,6 @@ const StyledHeader = styled(Section)`
 
       &:first-of-type {
         margin-top: 4rem;
-        margin-bottom: 2rem;
       }
     }
   }
