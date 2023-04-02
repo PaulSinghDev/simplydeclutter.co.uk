@@ -1,5 +1,14 @@
 import type { NextPage } from "next";
-import { Card, Footer, Meta, Nav, Section, Services, Slider } from "components";
+import {
+  Card,
+  Footer,
+  Link,
+  Meta,
+  Nav,
+  Section,
+  Services,
+  Slider,
+} from "components";
 import { useRouter } from "next/router";
 import { pages, siteInfo, navLinks } from "data";
 import styled from "styled-components";
@@ -120,26 +129,12 @@ const Prices: NextPage = () => {
         <StyledPricesSection id="prices">
           <h2>My Prices</h2>
           <p>
-            In order to keep my pricing as fair as possible I charge a flat fee
-            of just <strong>£35 per hour</strong> for all my clients and do not
-            add on any hidden fees.
+            For pricing please{" "}
+            <Link url="tel:07738129337" title="Call me for a quote">
+              call me
+            </Link>{" "}
+            and we can discuss your requirements.
           </p>
-          <p>
-            A pre agreed travel/fuel supplement will be charged for clients over
-            15 miles or half hour travel time from Burford.
-          </p>
-          <strong>A full breakdown is below:</strong>
-          <div className="price-list">
-            <ul>
-              <li>Consultation Fee: £0</li>
-              <li>Hourly Rate: £35</li>
-              <li>Minimum Session: 2 hours</li>
-              <li>
-                Payment must be paid at the end of each session in cash, by card
-                or by bank transfer.
-              </li>
-            </ul>
-          </div>
         </StyledPricesSection>
       </main>
       <Footer />
