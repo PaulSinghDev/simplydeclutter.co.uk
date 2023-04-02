@@ -8,7 +8,6 @@ interface SchemaProps {
   url: string;
   telephone: string;
 }
-
 const Schema: React.FC<SchemaProps> = ({
   type,
   name,
