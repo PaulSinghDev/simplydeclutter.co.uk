@@ -22,7 +22,6 @@ const Home: NextPage = () => {
         <div className="hero-image">
           <Image
             src="/assets/images/logos/full-logo-blue-500.svg"
-            layout="responsive"
             width={500}
             height={200}
             alt="Simply Declutter logo"

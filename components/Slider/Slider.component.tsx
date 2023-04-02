@@ -1,4 +1,5 @@
 import { siteInfo } from "data";
+import { useSwipe } from "hooks/useSwipe.hook";
 import {
   HTMLAttributes,
   MouseEvent,
@@ -6,7 +7,6 @@ import {
   useEffect,
   useRef,
   ComponentType,
-  FC,
 } from "react";
 import styled from "styled-components";
 
@@ -54,7 +54,7 @@ const Slider: React.FC<SliderProps> = ({ slides, ...rest }) => {
     // Get the index of the slide associated with this button
     const associatedSlide = Number(e.currentTarget.dataset.index);
 
-    _slides.current.some((slide: Element, i: number) =>
+    _slides?.current.some((slide: Element, i: number) =>
       i === associatedSlide
         ? (slide.classList.add("active"),
           slide.setAttribute("aria-hidden", "false"))
@@ -62,7 +62,7 @@ const Slider: React.FC<SliderProps> = ({ slides, ...rest }) => {
           slide.setAttribute("aria-hidden", "true"))
     );
 
-    _buttons.current.some((buttons: Element, i: number) => {
+    _buttons?.current.some((buttons: Element, i: number) => {
       if (i === associatedSlide) {
         buttons.setAttribute("disabled", "");
       } else {
@@ -71,8 +71,80 @@ const Slider: React.FC<SliderProps> = ({ slides, ...rest }) => {
     });
   };
 
+  const handleSwipeLeft = () => {
+    const activeSlideIndex = _slides?.current.reduce(
+      (output: number, current: Element, index: number) => {
+        if (current?.getAttribute("aria-hidden") === "false") output = index;
+        return output;
+      },
+      0
+    );
+    if (activeSlideIndex === 0) return;
+    const activeSlide = _slides.current.find(
+      (slide: Element, index: number) => index === activeSlideIndex
+    );
+    const activeSlideTrigger = _buttons.current.find(
+      (slide: Element, index: number) => index === activeSlideIndex
+    );
+    const nextSlide = _slides.current.find(
+      (slide: Element, index: number) => index === activeSlideIndex - 1
+    );
+    const nextSlideTrigger = _buttons.current.find(
+      (slide: Element, index: number) => index === activeSlideIndex - 1
+    );
+
+    activeSlide?.setAttribute("aria-hidden", "true");
+    activeSlide?.classList.remove("active");
+    nextSlide?.setAttribute("aria-hidden", "false");
+    nextSlide?.classList.add("active");
+
+    nextSlideTrigger?.setAttribute("disabled", "");
+    activeSlideTrigger?.removeAttribute("disabled");
+  };
+  const handleSwipeRight = () => {
+    console.log("left");
+    const activeSlideIndex = _slides?.current.reduce(
+      (output: number, current: Element, index: number) => {
+        if (current?.getAttribute("aria-hidden") === "false") output = index;
+        return output;
+      },
+      0
+    );
+    if (activeSlideIndex === _slides.current.length) return;
+    const activeSlide = _slides.current.find(
+      (slide: Element, index: number) => index === activeSlideIndex
+    );
+    const activeSlideTrigger = _buttons.current.find(
+      (slide: Element, index: number) => index === activeSlideIndex
+    );
+    const nextSlide = _slides.current.find(
+      (slide: Element, index: number) => index === activeSlideIndex + 1
+    );
+    const nextSlideTrigger = _buttons.current.find(
+      (slide: Element, index: number) => index === activeSlideIndex + 1
+    );
+
+    activeSlide?.setAttribute("aria-hidden", "true");
+    activeSlide?.classList.remove("active");
+    nextSlide?.setAttribute("aria-hidden", "false");
+    nextSlide?.classList.add("active");
+
+    nextSlideTrigger?.setAttribute("disabled", "");
+    activeSlideTrigger?.removeAttribute("disabled");
+  };
+
+  const { handleMouseDown, handleTouchStart } = useSwipe<HTMLDivElement>(
+    handleSwipeLeft,
+    handleSwipeRight
+  );
+
   return (
-    <StyledSlider className="slider__wrapper" {...rest}>
+    <StyledSlider
+      className="slider__wrapper"
+      onPointerDown={handleMouseDown}
+      onTouchStart={handleTouchStart}
+      {...rest}
+    >
       <ul className="slider__list" ref={_wrapper}>
         {slides.map((Slide: ComponentType | SlideInterface, i: number) =>
           isSlideInterface(Slide) ? (
